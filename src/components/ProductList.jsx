@@ -1,7 +1,10 @@
 import React from 'react'
+import './css/ProductList.css';
 
-export default function ProductList() {
+const ProductList = () => {
   return (
     <div>ProductList</div>
   )
 }
+
+export default ProductList

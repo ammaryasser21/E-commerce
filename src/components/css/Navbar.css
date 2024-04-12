@@ -1,0 +1,199 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+}
+
+.logo {
+  height: 50px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  border: none;
+  color: black;
+  text-decoration: none;
+
+}
+
+span {
+  cursor: pointer;
+}
+
+a:hover,
+span:hover {
+  color: #f90;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+}
+
+.icon-box img {
+  height: 25px;
+  margin-left: 10px;
+}
+
+.icon-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f8f8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content li {
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 100;
+}
+
+.dropdown-content li ul {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.dropdown-content li:hover ul {
+  display: block;
+}
+
+img:hover {
+  color: #f90;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.icon-button:hover .icon {
+  color: orange;
+}
+
+.icon-button:hover .Search-icon,
+.icon-button:hover .User-icon,
+.icon-button:hover .Cart-icon {
+  color: orange;
+}
+
+.icon-box {
+  display: flex;
+}
+
+.icon-container {
+  margin-right: 10px;
+}
+
+.icon:hover> :nth-child(odd) {
+  color: #f90;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+.icon-box span:hover {
+  color: black;
+}
+
+.icon-container span {
+  margin: 5px;
+  color: grey;
+}
+
+.icon {
+  cursor: pointer;
+  margin-right: 10px;
+  width: 30px;
+}
+
+.icon-box .icon-container {
+  border-right: 1px solid grey;
+}
+
+
+.icon-box .icon-container:last-child {
+  border-right: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  /* Position the menu below the user icon */
+  left: 0;
+  background-color: #fff;
+  /* Background color of the menu */
+  border: 1px solid #ccc;
+  /* Border color */
+  border-radius: 4px;
+  /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Shadow for a subtle elevation effect */
+  padding: 0px;
+  /* Padding inside the menu */
+  z-index: 100;
+  /* Ensure the menu appears above other elements */
+  display: none;
+  /* Initially hide the menu */
+}
+
+/* Show the menu when isMenuOpen is true */
+.icon-container:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style the links inside the dropdown menu */
+.dropdown-menu a {
+  display: block;
+  color: #333;
+  /* Link color */
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+/* Add hover effect for links */
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  /* Background color on hover */
+}
+
+li a {
+  color: #333;
+  /* Link color */
+  text-decoration: none;
+}

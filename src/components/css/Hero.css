@@ -1,0 +1,63 @@
+/* Centerize the carousel caption */
+.carousel-inner .carousel-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 190px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.carousel img {
+  height: 90vh;
+}
+
+/* Animation for h1 */
+.carousel-inner .carousel-caption h1 {
+  animation: fadeInUp 0.5s ease forwards, delayFadeInUp 0.5s ease forwards;
+}
+
+/* Animation for h3 */
+.carousel-inner .carousel-caption h3 {
+  animation: fadeInUp 0.7s ease forwards, delayFadeInUp 0.7s ease forwards;
+}
+
+/* Animation for button */
+.carousel-inner .carousel-caption button {
+  animation: fadeInUp 0.9s ease forwards, delayFadeInUp 0.9s ease forwards;
+}
+
+/* Animation for paragraph */
+.carousel-inner .carousel-caption p {
+  animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
+  -webkit-animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
+}
+
+/* Button style */
+.btn-O {
+  background-color: #f90;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+
+/* Button hover effect */
+.btn-O:hover {
+  background-color: #000;
+  color: #f90;
+  transition: all 0.5s;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

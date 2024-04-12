@@ -1,7 +1,9 @@
 import React from 'react'
-
-export default function Wishlist() {
+import './css/Wishlist.css';
+const Wishlist = () => {
   return (
     <div>Wishlist</div>
   )
 }
+
+export default Wishlist

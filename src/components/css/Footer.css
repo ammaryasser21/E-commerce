@@ -1,0 +1,146 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 40px;
+
+
+}
+
+.contain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  background-color: #333;
+}
+
+.footer-section {
+  margin: 40px;
+
+}
+
+.footer-section h4 {
+  margin-bottom: 20px;
+  display: flex;
+
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  flex-direction: column;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-section a:hover {
+  color: #f90;
+  text-decoration: none;
+}
+
+.social-icons a {
+  margin-right: 15px;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-section li:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  background-color: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a:hover {
+
+  background-color: #f90;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.newsletter input {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px grey solid;
+  background-color: transparent;
+}
+
+.newsletter input:hover {
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px #f90 solid;
+  background-color: transparent;
+  outline: none;
+  transition: all 0.5s;
+}
+
+.newsletter input:focus {
+
+  outline: none;
+  transition: all 0.5s;
+  caret-color: white;
+}
+
+.newsletter input::placeholder {
+
+  color: white;
+  transition: all 0.5s;
+}
+
+.subscribe-btn {
+  background-color: #f90;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background-color: #000;
+  transition: all 0.5s;
+}
+
+.fa-paper-plane {
+  margin-right: 8px;
+}
+
+.copyright {
+  text-align: center;
+  padding: 40px;
+  background-color: #000;
+  color: white;
+  height: 10vh;
+}
+
+.heart {
+  color: white;
+}
+
+/* Add media queries for responsiveness */

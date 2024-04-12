@@ -1,7 +1,9 @@
 import React from 'react'
-
-export default function Filter() {
+import './css/FilterBar.css';
+const FilterBar = () => {
   return (
-    <div>Filter</div>
+    <div>FilterBar</div>
   )
 }
+
+export default FilterBar

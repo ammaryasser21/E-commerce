@@ -1,7 +1,10 @@
 import React from 'react'
+import './css/Registration.css';
 
-export default function Registration() {
+const Registration = () => {
   return (
     <div>Registration</div>
   )
 }
+
+export default Registration
