@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/Contact.css';
+import Title from './Title';
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <Title title="CONTACT US"/>
   )
 }
 

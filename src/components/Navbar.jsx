@@ -5,30 +5,33 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "./css/Navbar.css";
 import Main_logo from "../assets/_images_logo_logo.png";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import { useProducts } from "../ProductContext.js";
 
+ 
 
-const Navbar = () => {
+const Navbar = () => { 
+  const {products, setProducts } = useProducts();
   return (
     <nav className="navbar">
       <img src={Main_logo} alt="Company Logo" className="logo" />
       <ul>
         <li>
-          <Link To="/Home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link To="">About</Link>
+          <Link to="/About">About</Link>
         </li>
         <li className="dropdown">
           <span>Furniture Home</span>
           <ul className="dropdown-content">
-            <li>
-              <Link To="">Bedroom</Link>
+          <li>
+              <Link to={{ pathname: "/ProductCat", search: "?category=Bedroom" }}>Bedroom</Link>
             </li>
             <li>
-              <Link To="">Dining</Link>
+              <Link to={{ pathname: "/ProductCat", search: "?category=Dining" }}>Dining</Link>
             </li>
             <li>
-              <Link To="">Living</Link>
+              <Link to={{ pathname: "/ProductCat", search: "?category=Living" }}>Living</Link>
             </li>
           </ul>
         </li>
@@ -36,13 +39,13 @@ const Navbar = () => {
           <span>Furniture Office</span>
           <ul className="dropdown-content">
           <li>
-              <Link To="">Bedroom</Link>
+              <Link to="/ProductCat">Bedroom</Link>
             </li>
             <li>
-              <Link To="">Dining</Link>
+              <Link to="/ProductCat">Dining</Link>
             </li>
             <li>
-              <Link To="">Living</Link>
+              <Link to="/ProductCat">Living</Link>
             </li>
           </ul>
         </li>
@@ -50,18 +53,18 @@ const Navbar = () => {
         <span>Furniture Hospital</span>
         <ul className="dropdown-content">
           <li>
-            <Link To="">Bedroom</Link>
+            <Link to="/ProductCat">Bedroom</Link>
           </li>
           <li>
-            <Link To="">Dining</Link>
+            <Link to="/ProductCat">Dining</Link>
           </li>
           <li>
-            <Link To="">Living</Link>
+            <Link to="/ProductCat">Living</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link To="">Contact</Link>
+        <Link to="/Contact">Contact</Link>
       </li>
     </ul>
     <div className="icon-box">
@@ -73,19 +76,20 @@ const Navbar = () => {
           <FaUser className="icon"  />
           <ul className="dropdown-content">
             <li>
-              <Link To="">Bedroom</Link>
+              <Link to="/Registration">Sign in</Link>
             </li>
             <li>
-              <Link To="">Dining</Link>
+              <Link to="/Cart">Cart</Link>
             </li>
             <li>
-              <Link To="">Living</Link>
+              <Link to="/WishList">WishList</Link>
             </li>
           </ul>
         </li>
       </div>
       <div className="icon-container">
-        <FaShoppingCart className="icon" />
+      <Link to={{ pathname: "/Cart"}}><FaShoppingCart className="icon" /></Link>
+        
       </div>
     </div>
   </nav>

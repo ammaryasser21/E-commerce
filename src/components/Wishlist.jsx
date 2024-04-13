@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/Wishlist.css';
+import Title from './Title';
 const Wishlist = () => {
   return (
-    <div>Wishlist</div>
+    <Title title="WISHLIST"/>
   )
 }
 

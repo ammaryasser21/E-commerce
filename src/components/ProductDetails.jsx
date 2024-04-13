@@ -1,9 +1,9 @@
 import React from 'react'
 import './css/ProductDetails.css';
-
+import Title from './Title';
 const ProductDetails = () => {
   return (
-    <div>ProductDetails</div>
+    <Title title="PRODUCT DETAILS"/>
   )
 }
 

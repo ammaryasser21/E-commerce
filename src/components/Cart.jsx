@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/Cart.css';
+import Title from './Title';
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <Title title="CART"/>
   )
 }
 

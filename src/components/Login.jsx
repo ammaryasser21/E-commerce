@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/Login.css';
+import Title from './Title';
 const Login = () => {
   return (
-    <div>Login</div>
+    <Title title="LOGIN"/>
   )
 }
 

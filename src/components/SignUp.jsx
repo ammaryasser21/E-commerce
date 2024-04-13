@@ -1,9 +1,9 @@
 import React from 'react'
 import './css/SignUp.css';
-
+import Title from './Title';
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <Title title="SIGNUP"/>
   )
 }
 

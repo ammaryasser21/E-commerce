@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/Footer.css";
+import {Link} from 'react-router-dom';
 import "@fortawesome/fontawesome-free/css/all.css";
 
 const Footer = () => {
@@ -35,13 +36,13 @@ const Footer = () => {
             <h4>Information</h4>
             <ul>
               <li>
-                <a href=" ">About Us</a>
+              <Link to="/About">About</Link>
               </li>
               <li>
-                <a href=" ">Privacy & Policy</a>
+                <Link to="*">Privacy & Policy</Link>
               </li>
               <li>
-                <a href=" ">Terms</a>
+                <Link to="*">Terms</Link>
               </li>
             </ul>
           </div>
@@ -49,13 +50,13 @@ const Footer = () => {
             <h4>Account</h4>
             <ul>
               <li>
-                <a href=" ">Login</a>
+              <Link to="/Registration">Sign in</Link>
               </li>
               <li>
-                <a href=" ">My Cart</a>
+              <Link to="/Cart">Cart</Link>
               </li>
               <li>
-                <a href=" ">Wishlist</a>
+              <Link to="/WishList">WishList</Link>
               </li>
             </ul>
           </div>
