@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
-
+import product1 from './assets/product1.jfif';
+import Product2 from './assets/Product2.jfif';
+import Product3 from './assets/Product3.jfif';
 const ProductContext = createContext();
 export const useProducts = () => {
   return useContext(ProductContext);
@@ -10,20 +12,30 @@ export const ProductProvider = ({ children }) => {
     { 
       id: 1, 
       name: "Product 1", 
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum nisi in odio finibus, eu fermentum neque fringilla.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       isNew: true, 
       isFeatured: false, 
       isTrending: false,
-      photo: "https://example.com/product1.jpg"
+      isOneSale:false,
+      price:1000,
+      discount:999,
+      number:0,
+      photo: product1,
+      category:"Chair"
     },
     { 
       id: 2, 
       name: "Product 2", 
-      description: "Sed ullamcorper elit vel erat congue, nec luctus purus consequat. Aliquam bibendum lorem nec leo scelerisque, eu mollis nisl laoreet.",
+      description: "Sed ullamcorper elit vel erat congue.",
       isNew: false, 
       isFeatured: true, 
       isTrending: false,
-      photo: "https://example.com/product2.jpg"
+      isOneSale:false,
+      price:1000,
+      discount:50,
+      number:0,
+      photo: Product2,
+      category:"Bedroom"
     },
     { 
       id: 3, 
@@ -32,16 +44,26 @@ export const ProductProvider = ({ children }) => {
       isNew: true, 
       isFeatured: true, 
       isTrending: false,
-      photo: "https://example.com/product3.jpg"
+      isOneSale:false,
+      price:1000,
+      discount:500,
+      number:0,
+      photo: Product3,
+      category:"Dining"
     },
     { 
       id: 4, 
-      name: "Product 4", 
-      description: "Fusce vel arcu elementum, dictum lorem nec, pellentesque sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.",
+      name: "bed", 
+      description: "Fusce vel arcu elementum, dictum lorem nec.",
       isNew: false, 
       isFeatured: false, 
       isTrending: true,
-      photo: "https://example.com/product4.jpg"
+      isOneSale:false,
+      price:1000,
+      discount:400,
+      number:0,
+      photo: Product3,
+      category:"Lounge"
     },
   
 ]);

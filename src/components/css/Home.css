@@ -1,11 +1,19 @@
 .category {
   border-radius: 50%;
-  /* Makes the image container circular */
   overflow: hidden;
-  /* Ensures the image is clipped within the circle */
-}
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px black solid;
+  cursor: pointer;
 
-/* General Styling */
+}
 .product-categories {
   display: flex;
   flex-direction: column;
@@ -34,28 +42,18 @@
   padding: 5px;
   margin:5px;
   cursor: pointer;
+  font-weight:bold;
 }
+.filter-option.active {
+  color: #f90;
+}
+
 
 .category-grid {
   display: flex;
   padding: 50px;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-.category {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 20px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border: 2px black solid;
-  cursor: pointer;
-
 }
 
 .category:hover {

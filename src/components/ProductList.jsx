@@ -1,21 +1,25 @@
 import React from 'react'
 import './css/ProductList.css';
 import ProductCard from './ProductCard';
-const ProductList = ({ products, addToCart }) => {
+import Empty from './Empty';
+const ProductList = ({ products, addToCart, addToWishlist, removeFromCart, removeFromWishlist }) => {
   return (
     
-    <div className='product-list'>
+    <>
       {products.length > 0 ? (
-        products.map(product => (
-          <ProductCard key={product.id} product={product} addToCart={addToCart}/>
-        ))
-      ) : (
-
-        <div className="empty-icon">
-          <span>Empty</span>
+        <div className='product-list'>
+          {products.map(product => (
+            <ProductCard key={product.id}
+            addToCart={addToCart}
+            addToWishlist={addToWishlist}
+            removeFromCart={removeFromCart}
+            removeFromWishlist={removeFromWishlist} product={product}/>
+          ))}
         </div>
+      ) : (
+        <Empty name="There are no products!"/>
       )}
-    </div>
+    </>
     
   )
 }

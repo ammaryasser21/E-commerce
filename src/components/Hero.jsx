@@ -19,7 +19,7 @@ const Hero = () => {
             Torem ipsum dolor sit amet, consectetur adipisicing elitsed do
             eiusmo tempor incididunt ut labore et dolore magna
           </p>
-          <Link to={{ pathname: "/ProductCat", search: "?category=Bedroom" }}>
+          <Link to={{ pathname: "/Products"}}>
             <button className="m-3 btn-O">Shop Now</button>
           </Link>
         </div>
@@ -33,7 +33,7 @@ const Hero = () => {
             Torem ipsum dolor sit amet, consectetur adipisicing elitsed do
             eiusmo tempor incididunt ut labore et dolore magna
           </p>
-          <Link to={{ pathname: "/ProductCat", search: "?category=Bedroom" }}>
+          <Link to={{ pathname: "/Products"}}>
             <button className="m-3 btn-O">Shop Now</button>
           </Link>
         </div>

@@ -1,0 +1,67 @@
+/* Checkout.module.css */
+
+.checkoutContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkoutHeading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.checkoutItems {
+  margin-bottom: 20px;
+}
+
+.checkoutItem {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.itemName {
+  font-weight: bold;
+}
+
+.itemPrice {
+  margin-left: auto;
+}
+
+.emptyCartMessage {
+  font-style: italic;
+  text-align: center;
+  color: #888;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderForm input {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.orderForm button {
+  padding: 10px 20px;
+  background-color: #f90;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.orderForm button:hover {
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+.orderForm input:focus,
+.orderForm button:focus {
+  outline: none;
+}

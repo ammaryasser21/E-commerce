@@ -2,5 +2,17 @@
     width: 100%;
     text-align: center;
     padding: 80px;
+    padding-top:25vh;
     background-color:rgb(227, 234, 239);
+}
+.Title span{
+    padding:6px;
+    color:#373333; 
+}
+.Title span:hover{
+    color:#373333;
+}
+.Title p,.home,.title1{
+    color:#373333;
+    font-weight:100;
 }

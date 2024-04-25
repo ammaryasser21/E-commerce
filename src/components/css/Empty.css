@@ -1,0 +1,12 @@
+.empty-icon{
+    width:100%;
+    display:grid;
+    gap: 10px 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 50px 0 40px 0;
+}
+.empty-icon h5{
+    color:black;
+    font-weight:550;
+    }

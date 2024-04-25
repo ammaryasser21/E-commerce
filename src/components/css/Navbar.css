@@ -1,10 +1,137 @@
 .navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
   background-color: #f8f8f8;
+  padding:20px 60px;
+  transition: top 0.5s;
 }
+
+.search-bar {
+  position: fixed;
+  width: 100%;
+  height: 15vh;
+  background-color: white;
+  z-index: 2000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.form-wrap {
+  margin-bottom: 40px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  margin-right: 0px;
+  font-size: 16px;
+  outline: none;
+  width: 300px;
+  height: 40px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.search-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 8px 16px;
+  background-color: #f90;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.search-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+}
+.search-content .search-button:hover {
+  background-color: #000;
+  color:white;
+}
+.search-content .icon:hover {
+  color: white;
+  
+}
+
+.clear-button {
+  position: absolute;
+  background: none;
+  border: none;
+  bottom:10px;
+  cursor: pointer;
+  transition: all 2s ease-in-out;
+}
+
+.clear-button:hover {
+  transform: translateY(0);
+  transition: all 2s ease-in-out;
+}
+
+.clear-button svg {
+  margin-right: 5px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 100vw;
+  height: 85vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.navbar.hide {
+  top: -15vh;
+    transition: top 0.5s;
+}
+
+.search-bar.show {
+  top: 0;
+  transition: top 0.5s;
+}
+.search-bar.hide {
+  top: -15vh;
+  transition: top 0.5s;
+}
+
+.overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .logo {
   height: 50px;
@@ -59,7 +186,6 @@ li {
   cursor: pointer;
 }
 
-/* Dropdown Styles */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -144,6 +270,7 @@ img:hover {
 
 .icon-box .icon-container {
   border-right: 1px solid grey;
+  position: relative;
 }
 
 
@@ -154,46 +281,49 @@ img:hover {
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  /* Position the menu below the user icon */
   left: 0;
   background-color: #fff;
-  /* Background color of the menu */
   border: 1px solid #ccc;
-  /* Border color */
   border-radius: 4px;
-  /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Shadow for a subtle elevation effect */
   padding: 0px;
-  /* Padding inside the menu */
   z-index: 100;
-  /* Ensure the menu appears above other elements */
   display: none;
-  /* Initially hide the menu */
 }
 
-/* Show the menu when isMenuOpen is true */
 .icon-container:hover .dropdown-menu {
   display: block;
 }
 
-/* Style the links inside the dropdown menu */
 .dropdown-menu a {
   display: block;
   color: #333;
-  /* Link color */
   text-decoration: none;
   padding: 4px 0;
 }
 
-/* Add hover effect for links */
 .dropdown-menu a:hover {
   background-color: #f5f5f5;
-  /* Background color on hover */
 }
 
 li a {
   color: #333;
-  /* Link color */
   text-decoration: none;
+}
+.len{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom:-15 ;
+  font-size: smaller;
+  top:-5px;
+  right: 2px;
+  color:#fff;
+  text-align: center;
+  border-radius:10px;
+  background-color:#f90;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
 }

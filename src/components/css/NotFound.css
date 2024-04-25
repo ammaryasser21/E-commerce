@@ -1,0 +1,38 @@
+.empty-icon{
+    width:100%;
+    display:grid;
+    gap: 10px 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 100px;
+}
+.empty-icon h1{
+    color:black;
+    font-weight:550;
+    }
+.empty-icon span{
+        font-weight:700;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        }
+        .empty-icon span i{
+            padding :0 20px 0;
+                        }
+ .empty-icon span p{
+ font-size:170px;
+}
+/* Button style */
+.btn-O {
+    background-color: #f90;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+  }
+  
+  /* Button hover effect */
+  .btn-O:hover {
+    background-color: #000;
+    color: white;
+    transition: all 0.5s;
+  }

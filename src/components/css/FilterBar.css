@@ -1,0 +1,58 @@
+
+.superdiv
+{
+width: 1000px;
+height: 70px;
+background-color: cadetblue;
+margin-left: 10%;
+padding-left: 5%;
+display:flex;
+}
+.Showing
+{
+padding-top: 1%;
+}
+.Sort
+{
+    padding-left: 50%;
+    padding-top: 1%;
+}
+.list
+{
+max-width: 200px;
+}
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+}
+  
+  .selected-option {
+    padding: 10px;
+    border: 2px solid #1c1313;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+.options {
+    position: absolute;
+    top: 100%;
+    
+    width: 100%;
+    
+    list-style-type: none;
+    background-color: #ffffff;
+    border: 1px solid #ca4510;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.options li {
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.options li:hover {
+    background-color: #ee810d;
+}

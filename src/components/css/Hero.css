@@ -1,4 +1,4 @@
-/* Centerize the carousel caption */
+
 .carousel-inner .carousel-caption {
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 .carousel img {
-  height: 90vh;
+  height: 100vh;
 }
 
 /* Animation for h1 */
