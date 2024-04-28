@@ -44,7 +44,7 @@
 
 /* Button hover effect */
 .btn-O:hover {
-  background-color: #000;
+  background-color: #0c1e38;
   color: #f90;
   transition: all 0.5s;
 }

@@ -159,7 +159,13 @@ const Navbar = () => {
             >
               <FaUser className="icon" />
               <ul className="dropdown-content">
-
+              {isLoggedIn && (
+                  
+                    <li>
+                      <Link to="/">{username}</Link>
+                    </li>
+                    
+                )}
                 <li>
                   <Link to="/Cart">Cart</Link>
                 </li>
@@ -167,16 +173,11 @@ const Navbar = () => {
                   <Link to="/WishList">WishList</Link>
                 </li>
                 {isLoggedIn ? (
-                  <>
-                    <li>
-                      <Link to="/">{username}</Link>
-                    </li>
                     <li>
                       <Link to="/" onClick={handleLogout}>
                         Logout
                       </Link>
                     </li>
-                  </>
                 ) : (
                   <li>
                     <Link to="/Registration">Sign in</Link>
@@ -188,7 +189,8 @@ const Navbar = () => {
           <div className="icon-container">
             <Link to={{ pathname: "/Cart" }}>
               <FaShoppingCart className="icon shoppingcart" />
-              <p className="len">{cart.length}</p>
+              {cart.length!==0 && <p className="len">{cart.length}</p>}
+              
             </Link>
           </div>
         </div>

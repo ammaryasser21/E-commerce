@@ -19,25 +19,28 @@ const ProductCard = ({
     addToCart(product);
     setIsAddedToCart(true);
     addAlert(alertIndex, product, 'success', 'cart');
-
+    setAlertIndex(alertIndex+1);
   };
 
   const handleAddToWishlist = () => {
     addToWishlist(product);
     setIsAddedToWishlist(true);
     addAlert(alertIndex, product, 'success', 'wishlist');
+    setAlertIndex(alertIndex+1);
   };
 
   const handleRemoveFromCart = () => {
     removeFromCart(product);
     setIsAddedToCart(false);
     addAlert(alertIndex, product, 'error', 'cart');
+    setAlertIndex(alertIndex+1);
   };
 
   const handleRemoveFromWishlist = () => {
     removeFromWishlist(product);
     setIsAddedToWishlist(false);
     addAlert(alertIndex, product, 'error', 'wishlist');
+    setAlertIndex(alertIndex+1);
   };
 
   const addAlert = (index, product, type, kind) => {

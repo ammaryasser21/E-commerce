@@ -99,14 +99,12 @@
 }
 
 .newsletter input:focus {
-
   outline: none;
   transition: all 0.5s;
   caret-color: white;
 }
 
 .newsletter input::placeholder {
-
   color: white;
   transition: all 0.5s;
 }

@@ -1,57 +1,78 @@
-/* Wishlist.css */
 .wishlist-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .wishlist-item {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .item-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .item-info img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  .item-details h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .item-details p {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .item-actions button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .item-actions button + button {
-    margin-left: 10px;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.wishlist-table {
+  padding: 20px;
+}
+
+.wishlist-container table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wishlist-container thead {
+  background-color: #f2f2f2;
+}
+
+.wishlist-container tbody tr td:first-child {
+  border-left: 1px solid #ddd;
+}
+
+.wishlist-container tbody tr td:last-child {
+  border-right: 1px solid #ddd;
+}
+
+.wishlist-container th, .wishlist-container td {
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.wishlist-container th {
+  font-weight: bold;
+  background-color: #d7d7d7;
+}
+
+.wishlist-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.add-to-cart {
+  background-color: #f90;
+  color:white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size:12px;
+  transition-duration: 0.3s;
+}
+.add-to-cart:hover {
+  background-color: #000;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #000;
+  transition-duration: 0.3s;
+}
+.remove-item:hover {
+  color: #f90;
+}
+
+.wishlist-container table td, .wishlist-container table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wishlist-container table td img {
+  display: block;
+  margin: 0 auto;
+}

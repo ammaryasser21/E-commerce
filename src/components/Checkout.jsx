@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './css/Checkout.module.css';
 import { useWishlistCart } from "../WishlistCartContext.js";
-
+import Title from './Title';  
 const Checkout = () => {
   const { cart } = useWishlistCart();
   const [formData, setFormData] = useState({
@@ -32,6 +32,8 @@ const Checkout = () => {
   };
 
   return (
+    <>
+    <Title title="CART"/>
     <div className={styles.checkoutContainer}>
       <h2 className={styles.checkoutHeading}>Checkout</h2>
       <div className={styles.checkoutItems}>
@@ -82,6 +84,7 @@ const Checkout = () => {
         <button type="submit">Place Order</button>
       </form>
     </div>
+    </>
   );
 }
 

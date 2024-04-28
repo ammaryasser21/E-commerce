@@ -1,14 +1,20 @@
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState,useEffect } from "react";
 
 const WishlistCartContext = createContext();
 
 export const useWishlistCart = () => useContext(WishlistCartContext);
 
 export const WishlistCartProvider = ({ children }) => {
-  const [wishlist, setWishlist] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState(
+    JSON.parse(localStorage.getItem('wishlist')) || []
+  );
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
 
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [wishlist, cart]);
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -44,6 +50,7 @@ export const WishlistCartProvider = ({ children }) => {
       value={{
         wishlist,
         cart,
+        setCart,
         addToCart,
         addToWishlist,
         removeFromCart,
