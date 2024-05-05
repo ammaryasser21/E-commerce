@@ -18,7 +18,8 @@ const ProductSearch = () => {
     const searchParam = queryParams.get('search');
     
     if (searchParam) {
-      const filtered = products.filter(product => product.name == searchParam);
+      // Filter products that contain the letter 'b' in their name
+      const filtered = products.filter(product => product.name.toLowerCase().includes(searchParam));
       setFilteredProducts(filtered);
       setSearch(searchParam);
     } else {

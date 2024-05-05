@@ -9,11 +9,13 @@ const ProductCard = ({
   addToWishlist,
   removeFromCart,
   removeFromWishlist,
+  alerts,
+  setAlerts,
+  alertIndex,
+  setAlertIndex,
 }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [isAddedToWishlist, setIsAddedToWishlist] = useState(false);
-  const [alerts, setAlerts] = useState([]);
-  const [alertIndex, setAlertIndex] = useState(0);
 
   const handleAddToCart = () => {
     addToCart(product);

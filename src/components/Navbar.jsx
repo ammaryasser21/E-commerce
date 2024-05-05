@@ -5,8 +5,6 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "./css/Navbar.css";
 import Main_logo from "../assets/_images_logo_logo.png";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import { GoDash } from "react-icons/go";
 import { useWishlistCart } from "../WishlistCartContext.js";
 
 const SearchForm = () => {
@@ -73,7 +71,6 @@ const Navbar = () => {
     setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
   };
 
-  const [showGoDash, setShowGoDash] = useState(false);
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
@@ -201,8 +198,8 @@ const Navbar = () => {
           <div className="form-wrap">
             <SearchForm />
           </div>
-          <button className="clear-button" onMouseEnter={() => setShowGoDash(true)} onMouseLeave={() => setShowGoDash(false)} onClick={toggleSearch}>
-            {showGoDash ? <GoDash /> : <IoClose />}
+          <button className="clear-button"  onClick={toggleSearch}>
+          
           </button>
         </div>
         <div

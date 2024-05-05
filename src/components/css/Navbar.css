@@ -88,6 +88,7 @@
   border: none;
   bottom:10px;
   cursor: pointer;
+  padding:5px;
   transition: all 2s ease-in-out;
 }
 
@@ -95,7 +96,34 @@
   transform: translateY(0);
   transition: all 2s ease-in-out;
 }
+.clear-button::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(-45deg);
 
+}
+.clear-button::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(45deg);
+}
+.clear-button:hover::before {
+  transform: rotate(0);
+}
+
+.clear-button:hover::after {
+  transform: rotate(0);
+}
 .clear-button svg {
   margin-right: 5px;
 }
