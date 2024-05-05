@@ -42,18 +42,19 @@
   width: 30px;
   height: 60px;
   font-size: larger;
-  border:1px solid #f90;
+  border:1px solid #ff7004;
   background-color:transparent;
 }
 .counter_button:hover {
-  background-color:  #f90;
+  background-color:  #ff7004;
   color:white;
+  transition: all 0.4s;
 }
 
 .counter_value {
   width: 60px;
   height: 60px;
-  border:1px solid #f90;
+  border:1px solid #ff7004;
   padding-left: 25px;
   padding-top: 15px;
 }
@@ -67,7 +68,7 @@
 .cart-btn{
   color:white;
 
-  background-color:  #f90;
+  background-color:  #ff7004;
 margin-left:15px;
   padding: 10px 30px;
   border: none;
@@ -81,6 +82,7 @@ margin-left:15px;
 .cart-btn:hover{
   color:white;
   background:black;
+  transition: all 0.4s;
 }
 .wishlist_compare_container {
   display: flex;
@@ -94,15 +96,16 @@ margin-left:15px;
   background:none;
 }
 .wishlist-btn:hover{
-  color:  #f90;
+  color:  #ff7004;
   transition: all 0.4s;
 }
 .wishlist-btn .fas {
-  color: #f90;
+  color: #ff7004;
   margin-right:5px;
 }
 .wishlist-btn:hover .fas {
-  color: #f90;
+  color: #ff7004;
+  transition: all 0.4s;
 }
 .share {
   padding-top: 5%;
@@ -115,4 +118,35 @@ margin-left:15px;
 .far, .fa-regular {
   font-weight: 400;
   margin-right: 10px;
+}
+.filter-options-2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom:0;
+  gap:20px;
+}
+.filter-option-2 {
+  padding: 5px;
+  margin:5px;
+  margin-bottom:0;
+  cursor: pointer;
+  font-weight:bold;
+}
+.filter-option-2.active-2 {
+  border-bottom:3px solid #ff7004;
+  transition: all 0.2s;
+}
+.filter-option-2:hover {
+  border-bottom:3px solid #ff7004;
+  color:black;
+  transition: all 0.2s;
+
+}
+.mainBorder{
+width:90%;
+margin:auto;
+margin-top:0;
+margin-bottom:30px;
+padding:10px;
+border:1px solid #ddd5d5;
 }

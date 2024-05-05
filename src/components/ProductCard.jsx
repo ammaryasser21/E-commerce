@@ -104,7 +104,6 @@ const ProductCard = ({
         </h3>
       </div>
       <Alert alerts={alerts} addAlert={addAlert} setAlerts={setAlerts} />
-
     </div>
   );
 };

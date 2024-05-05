@@ -58,12 +58,12 @@
     cursor: pointer;
 }
   .product-photo .wishlist-btn:hover{
-    background-color: #f90;
+    background-color: #ff7004;
     color: #fff;
     transition: all 0.4s;
   }
   .wishlist-btn .fas {
-    color: #f90;margin:0;
+    color: #ff7004;margin:0;
   }
   .wishlist-btn .fas.fa-heart,.wishlist-btn .far.fa-heart{
     margin:0;
@@ -146,7 +146,7 @@
 }
   
 .product-photo .cart-btn:hover {
-    color: #f90;
+    color: #ff7004;
     transition: all 0.5s;
     background-color:white;
   }

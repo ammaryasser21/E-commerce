@@ -39,7 +39,7 @@
 }
 
 .footer-section a:hover {
-  color: #f90;
+  color: #ff7004;
   text-decoration: none;
 }
 
@@ -68,7 +68,7 @@
 
 .social-icons a:hover {
 
-  background-color: #f90;
+  background-color: #ff7004;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -92,7 +92,7 @@
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-  border: 1px #f90 solid;
+  border: 1px #ff7004 solid;
   background-color: transparent;
   outline: none;
   transition: all 0.5s;
@@ -110,7 +110,7 @@
 }
 
 .subscribe-btn {
-  background-color: #f90;
+  background-color: #ff7004;
   color: #fff;
   padding: 10px 20px;
   border: none;

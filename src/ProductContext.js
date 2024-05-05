@@ -21,7 +21,11 @@ export const ProductProvider = ({ children }) => {
       discount:999,
       number:0,
       photo: product1,
-      category:"Chair"
+      category:"Chair",
+      reviews: [
+        {id:0, userName: "User3", rating: 3, message: "Good quality." },
+        {id:1, userName: "User4", rating: 4, message: "Nice design." }
+      ]
     },
     { 
       id: 2, 
@@ -35,7 +39,11 @@ export const ProductProvider = ({ children }) => {
       discount:50,
       number:0,
       photo: Product2,
-      category:"Bedroom"
+      category:"Bedroom",
+      reviews: [
+        {id:0, userName: "User3", rating: 3, message: "Good quality." },
+        {id:1, userName: "User4", rating: 4, message: "Nice design." }
+      ]
     },
     { 
       id: 3, 
@@ -49,7 +57,11 @@ export const ProductProvider = ({ children }) => {
       discount:500,
       number:0,
       photo: Product3,
-      category:"Dining"
+      category:"Dining",
+      reviews: [
+        {id:0, userName: "User3", rating: 3, message: "Good quality." },
+        {id:1, userName: "User4", rating: 4, message: "Nice design." }
+      ]
     },
     { 
       id: 4, 
@@ -63,13 +75,29 @@ export const ProductProvider = ({ children }) => {
       discount:400,
       number:0,
       photo: Product3,
-      category:"Lounge"
+      category:"Lounge",
+      reviews: [
+        {id:0, userName: "User3", rating: 3, message: "Good quality." },
+        {id:1, userName: "User4", rating: 4, message: "Nice design." }
+      ]
     },
   
 ]);
+// Function to add a review to a product
+const onAddReview = (productId, newReview) => {
+  const updatedProducts = products.map(product => {
+    if (product.id === productId) {
+      // Add the new review to the reviews array of the product
+      return { ...product, reviews: [...product.reviews, newReview] };
+    }
+    return product;
+  });
+  // Update the state with the updated products array
+  setProducts(updatedProducts);
+};
 
   return (
-    <ProductContext.Provider value={{ products,setProducts }}>
+    <ProductContext.Provider value={{ products,setProducts,onAddReview }}>
       {children}
     </ProductContext.Provider>
   );

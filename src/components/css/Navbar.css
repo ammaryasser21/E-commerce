@@ -57,7 +57,7 @@
   justify-content: center;
   height: 40px;
   padding: 8px 16px;
-  background-color: #f90;
+  background-color: #ff7004;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -157,7 +157,7 @@ span {
 
 a:hover,
 span:hover {
-  color: #f90;
+  color: #ff7004;
   transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -218,7 +218,7 @@ li {
 }
 
 img:hover {
-  color: #f90;
+  color: #ff7004;
 }
 
 .icon-button {
@@ -245,7 +245,7 @@ img:hover {
 }
 
 .icon:hover> :nth-child(odd) {
-  color: #f90;
+  color: #ff7004;
   transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -321,7 +321,7 @@ li a {
   color:#fff;
   text-align: center;
   border-radius:10px;
-  background-color:#f90;
+  background-color:#ff7004;
   -webkit-border-radius:10px;
   -moz-border-radius:10px;
   -ms-border-radius:10px;

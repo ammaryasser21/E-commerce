@@ -45,7 +45,7 @@
   font-weight:bold;
 }
 .filter-option.active {
-  color: #f90;
+  color: #ff7004;
 }
 
 
@@ -57,7 +57,7 @@
 }
 
 .category:hover {
-  border: #f90 dashed;
+  border: #ff7004 dashed;
   transition: all 0.2s;
 }
 

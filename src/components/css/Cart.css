@@ -73,7 +73,7 @@
   transition-duration: 0.3s;
 }
 .remove-item:hover {
-  color: #f90;
+  color: #ff7004;
 }
 
 .cart-container table td,.cart-container table th {

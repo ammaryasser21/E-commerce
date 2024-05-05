@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Title from "./Title";
 import Empty from "./Empty";
+import RelPro from "./RelPro.jsx";
+import Reviews from "./Reviews.jsx"
 import { useProducts } from "../ProductContext.js";
 import { useWishlistCart } from "../WishlistCartContext.js";
 import "./css/ProductDetails.css";
@@ -11,7 +13,7 @@ import Alert from './Alert.jsx';
 
 const ProductDetails = () => {
   const location = useLocation();
-  const { products } = useProducts();
+  const { products,onAddReview } = useProducts();
   const [product, setProduct] = useState(null);
   const [count, setCount] = useState(0);
   const [isAddedToWishlist, setIsAddedToWishlist] = useState(false);
@@ -23,6 +25,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const idParam = queryParams.get("id");
+    // eslint-disable-next-line eqeqeq
     const foundProduct = products.find((product) => product.id == idParam);
 
     if (foundProduct) {
@@ -33,6 +36,7 @@ const ProductDetails = () => {
   }, [location.search, products]);
   const [alerts, setAlerts] = useState([]);
   const [alertIndex, setAlertIndex] = useState(0);
+  const [activeFilter, setActiveFilter] = useState("Description");
   const handleAddToCart = () => {
     addToCart(product);
   
@@ -58,6 +62,10 @@ const ProductDetails = () => {
 
   const addAlert = (index, title, description, type) => {
     setAlerts([...alerts, { index, title, description, type }]);
+  };
+
+  const handleFilter = (option) => {
+    setActiveFilter(option);
   };
 
   return (
@@ -130,10 +138,26 @@ const ProductDetails = () => {
               </div>
             </div>
           </section>
+          <section className="des_rev">
+            <div className="filter-options-2">
+              <span className={`filter-option-2 ${activeFilter === "Description" ? "active-2" : ""}`} onClick={() => handleFilter("Description")}>Description</span>
+              <span className={`filter-option-2 ${activeFilter === "Reviews" ? "active-2" : ""}`} onClick={() => handleFilter("Reviews")}>Reviews</span>
+            </div>
+            <div className="mainBorder">
+              {activeFilter === "Description" ? (
+                  <div style={{ color: 'rgb(71, 71, 71)', margin: '10px' }}>{product.description}</div>
+            ) : (
+              <Reviews id={product.id} reviews={product.reviews} onAddReview={onAddReview} />
+            )}
+            </div>
+            
+          </section>
+          <RelPro type={product.category} />
         </>
       ) : (
         <Empty name="Product Not Found!" />
       )}
+      
       <Alert alerts={alerts} addAlert={addAlert} setAlerts={setAlerts} />
     </div>
   );

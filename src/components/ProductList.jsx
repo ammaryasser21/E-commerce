@@ -4,7 +4,6 @@ import ProductCard from './ProductCard';
 import Empty from './Empty';
 const ProductList = ({ products, addToCart, addToWishlist, removeFromCart, removeFromWishlist }) => {
   return (
-    
     <>
       {products.length > 0 ? (
         <div className='product-list'>
