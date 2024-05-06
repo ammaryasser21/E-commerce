@@ -81,13 +81,13 @@ const ProductDetails = () => {
               <div className="SKU">
                 <p>
                   <strong>SKU:</strong>
-                   654
+                   {product.id}
                 </p>
               </div>
               <div className="Availability">
                 <p>
                   <strong>Availability: </strong>
-                  5 in Stock
+                  {product.capacity} in Stock
                 </p>
               </div>
               <div className="detail">

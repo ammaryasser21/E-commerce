@@ -6,13 +6,13 @@ const About = () => {
   return (
     <>
       <Title title="ABOUT US" />
-      <div className={styles.container}> {/* Use styles.container */}
+      <div className={styles.container}>
         <p className={styles.h2}>
           Furns is a global furniture destination for somethings. We sell
           cutting-edge furniture and offer a wide variety of fashion-related
           content.
         </p>
-        <div className={styles.images}> {/* Use styles.images */}
+        <div className={styles.images}>
           <img
             src={require("../assets/_images_about_02.jpg")}
             alt="img2"
@@ -24,8 +24,8 @@ const About = () => {
             className={styles.img1}
           />
         </div>
-        <div className={styles.str}> {/* Use styles.str */}
-          <div className={styles.OUR_STORES}> {/* Use styles.OUR_STORES */}
+        <div className={styles.str}>
+          <div className={styles.OUR_STORES}>
             <h3>OUR STORES</h3>
             <p>
               Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do
@@ -36,7 +36,7 @@ const About = () => {
               conse ctetur adipisicing elit, sed do eiusmod tempor.
             </p>
           </div>
-          <div className={styles.OUR_MISSION}> {/* Use styles.OUR_MISSION */}
+          <div className={styles.OUR_MISSION}>
             <h3>OUR MISSION</h3>
             <p>
               Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do

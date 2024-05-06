@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState } from 'react';
 import product1 from './assets/product1.jfif';
 import Product2 from './assets/Product2.jfif';
 import Product3 from './assets/Product3.jfif';
+
 const ProductContext = createContext();
+
 export const useProducts = () => {
   return useContext(ProductContext);
 };
@@ -20,6 +22,7 @@ export const ProductProvider = ({ children }) => {
       price:1000,
       discount:999,
       number:0,
+      capacity: 10,
       photo: product1,
       category:"Chair",
       reviews: [
@@ -38,6 +41,7 @@ export const ProductProvider = ({ children }) => {
       price:1000,
       discount:50,
       number:0,
+      capacity: 15,
       photo: Product2,
       category:"Bedroom",
       reviews: [
@@ -56,6 +60,7 @@ export const ProductProvider = ({ children }) => {
       price:1000,
       discount:500,
       number:0,
+      capacity: 20,
       photo: Product3,
       category:"Dining",
       reviews: [
@@ -74,6 +79,7 @@ export const ProductProvider = ({ children }) => {
       price:1000,
       discount:400,
       number:0,
+      capacity: 25,
       photo: Product3,
       category:"Lounge",
       reviews: [
@@ -81,20 +87,17 @@ export const ProductProvider = ({ children }) => {
         {id:1, userName: "User4", rating: 4, message: "Nice design." }
       ]
     },
-  
-]);
-// Function to add a review to a product
-const onAddReview = (productId, newReview) => {
-  const updatedProducts = products.map(product => {
-    if (product.id === productId) {
-      // Add the new review to the reviews array of the product
-      return { ...product, reviews: [...product.reviews, newReview] };
-    }
-    return product;
-  });
-  // Update the state with the updated products array
-  setProducts(updatedProducts);
-};
+  ]);
+
+  const onAddReview = (productId, newReview) => {
+    const updatedProducts = products.map(product => {
+      if (product.id === productId) {
+        return { ...product, reviews: [...product.reviews, newReview] };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
 
   return (
     <ProductContext.Provider value={{ products,setProducts,onAddReview }}>

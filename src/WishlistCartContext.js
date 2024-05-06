@@ -16,15 +16,27 @@ export const WishlistCartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [wishlist, cart]);
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    // Check if the product already exists in the cart
+    const existingProduct = cart.find((item) => item.id === product.id);
+  
+    if (existingProduct) {
+
+      setCart(
+        cart.map((item) =>
+          item.id === product.id ? { ...item, number: item.number + 1 } : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...product, number: 1 }]);
+    }
   };
+  
   // eslint-disable-next-line no-unused-vars
   const setProductNumber = (product, increment) => {
     const updatedCart = cart.map(item =>
       item.id === product.id ? { ...item, number: item.number + increment } : item
     );
   
-    // If the updated quantity is less than or equal to 0, remove the product from the cart
     if (updatedCart.find(item => item.id === product.id).number <= 0) {
       removeFromCart(product);
     } else {
