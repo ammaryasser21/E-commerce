@@ -7,7 +7,7 @@ const Alert = ({ alerts, setAlerts }) => {
     alerts.forEach((alert, index) => {
       const timeoutId = setTimeout(() => {
         setAlerts((prevAlerts) => prevAlerts.filter((_, i) => i !== index));
-      }, 2000);
+      }, 1500);
       timeoutIds.push(timeoutId);
     });
 
