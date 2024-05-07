@@ -36,6 +36,7 @@
   color: #fff;
   text-decoration: none;
   margin-right: 15px;
+  text-wrap: nowrap;
 }
 
 .footer-section a:hover {
