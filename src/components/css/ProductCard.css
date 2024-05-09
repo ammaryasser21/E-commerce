@@ -1,10 +1,11 @@
 .product-card {
     overflow: hidden;
-    width: 280px;
+    width: 100%;
+    max-width:280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:center
+    align-items:center;
   }
   
   .product-photo {

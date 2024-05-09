@@ -16,11 +16,8 @@ export const WishlistCartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [wishlist, cart]);
   const addToCart = (product) => {
-    // Check if the product already exists in the cart
     const existingProduct = cart.find((item) => item.id === product.id);
-  
     if (existingProduct) {
-
       setCart(
         cart.map((item) =>
           item.id === product.id ? { ...item, number: item.number + 1 } : item
@@ -31,18 +28,6 @@ export const WishlistCartProvider = ({ children }) => {
     }
   };
   
-  // eslint-disable-next-line no-unused-vars
-  const setProductNumber = (product, increment) => {
-    const updatedCart = cart.map(item =>
-      item.id === product.id ? { ...item, number: item.number + increment } : item
-    );
-  
-    if (updatedCart.find(item => item.id === product.id).number <= 0) {
-      removeFromCart(product);
-    } else {
-      setCart(updatedCart);
-    }
-  };
   const addToWishlist = (product) => {
     setWishlist([...wishlist, product]);
   };

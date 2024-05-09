@@ -132,6 +132,10 @@ margin-left:15px;
   cursor: pointer;
   font-weight:bold;
 }
+.filter-options-2 button{
+  background-color: transparent;
+  border: none;
+}
 .filter-option-2.active-2 {
   border-bottom:3px solid #ff7004;
   transition: all 0.2s;

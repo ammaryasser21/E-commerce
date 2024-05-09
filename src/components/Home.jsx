@@ -75,7 +75,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="Home-comp">
       <Hero />
       <div className="product-categories">
         <div className="category-grid">

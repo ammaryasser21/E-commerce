@@ -2,18 +2,18 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   border-radius: 50%;
-  margin: 20px;
+  margin: 1.25rem; 
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  border: 2px black solid;
+  border: 0.125rem black solid;
   cursor: pointer;
-
 }
+
 .product-categories {
   display: flex;
   flex-direction: column;
@@ -25,33 +25,37 @@
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 1em;
+  text-wrap: wrap;
 }
 
 .description {
   margin-bottom: 2em;
   color: #666;
+  text-wrap: wrap;
 }
 
 .filter-options {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 2em;
 }
 
 .filter-option {
-  padding: 5px;
-  margin:5px;
+  padding: 0.625rem;
+  margin: 0.625rem;
   cursor: pointer;
-  font-weight:bold;
+  font-weight: bold;
 }
 .filter-option.active {
   color: #ff7004;
 }
 
-
 .category-grid {
   display: flex;
-  padding: 50px;
+  width: 100vw;
+  flex-wrap: wrap;
+  padding: 3.125rem; 
   flex-direction: row;
   justify-content: space-evenly;
 }
@@ -62,10 +66,9 @@
 }
 
 .category img {
-  margin-top: 30px;
-  width: 80px;
-  height: 80px;
-
+  margin-top: 1.875rem;
+  width: 5rem; 
+  height: 5rem;
 }
 
 .category-name {
@@ -73,5 +76,45 @@
   width: 100%;
   margin: auto;
   color: black;
-  padding: 20px;
+  padding: 1.25rem;
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 1200px) {
+  .category-grid {
+    flex-wrap: wrap;
+
+  }
+  .category {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin: 0.9375rem;
+  }
+  .category-grid {
+    padding: 1.875rem;
+  }
+  .category img {
+    margin-top: 1.25rem;
+    width: 3.75rem; 
+    height: 3.75rem; 
+  }
+  .category-name {
+    padding: 0.9375rem;
+  }
+}
+
+.Home-comp{
+  width:100vw;
+}
+@media (max-width: 500px) {
+  .category-grid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 3.125rem; 
+    align-items: center;
+  }
+
+  .category-name {
+    padding: 0.625rem;
+  }
 }

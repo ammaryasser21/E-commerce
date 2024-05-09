@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './css/Checkout.module.css';
 import { useWishlistCart } from "../WishlistCartContext.js";
 import Title from './Title';  
-import jsPDF from 'jspdf';
 
 const Checkout = () => {
   const { cart } = useWishlistCart();
@@ -12,8 +11,6 @@ const Checkout = () => {
     address: '',
     phoneNumber: ''
   });
-
-  const totalAmount = cart.reduce((total, item) => total + (item.price * item.number), 0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +24,6 @@ const Checkout = () => {
     e.preventDefault();
     // You can handle form submission logic here, like sending data to backend
     console.log(formData);
-    generateInvoice();
 
     setFormData({
       name: '',
@@ -37,19 +33,6 @@ const Checkout = () => {
     });
   };
 
-const generateInvoice = () => {
-  const doc = new jsPDF();
-  doc.text('Invoice', 10, 10);
-  const currentDate = new Date();
-  const dateTimeString = currentDate.toLocaleString();
-  doc.text(`Date: ${dateTimeString}`, 10, 20);
-  cart.forEach((item, index) => {
-    doc.text(`${index + 1}. ${item.name} - ${item.number} x $${item.price}`, 10, 30 + (index * 10));
-  });
-
-  doc.text(`Total Amount: $${totalAmount.toFixed(2)}`, 10, 40 + (cart.length * 10));
-  doc.save('invoice.pdf');
-};
 
 
   return (

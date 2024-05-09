@@ -9,12 +9,12 @@ import im1 from "../assets/slider-2-2.jpg";
 import im2 from "../assets/slider-2-1.jpg";
 const Hero = () => {
   return (
-    <Carousel slide={false}>
+    <Carousel className="Main_b_car" slide={false}>
       <Carousel.Item>
-        <img src={im1} className="d-block w-100" alt="..." />
+        <img src={im1} className="d-block" alt="..." />
         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
           <h3 style={{ color: "white" }}>New Products</h3>
-          <h1 style={{ color: "white", fontSize: "80px" }}>Flexible Chair</h1>
+          <h1 style={{ color: "white"}}>Flexible Chair</h1>
           <p style={{ color: "white" }}>
             Torem ipsum dolor sit amet, consectetur adipisicing elitsed do
             eiusmo tempor incididunt ut labore et dolore magna
@@ -25,10 +25,10 @@ const Hero = () => {
         </div>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={im2} className="d-block w-100" alt="..." />
+        <img src={im2} className="d-block " alt="..." />
         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
           <h3 style={{ color: "white" }}>New Products</h3>
-          <h1 style={{ color: "white", fontSize: "80px" }}>Flexible Chair</h1>
+          <h1 style={{ color: "white"}}>Flexible Chair</h1>
           <p style={{ color: "white" }}>
             Torem ipsum dolor sit amet, consectetur adipisicing elitsed do
             eiusmo tempor incididunt ut labore et dolore magna

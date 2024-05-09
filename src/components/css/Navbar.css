@@ -266,6 +266,7 @@ img:hover {
 
 .icon-box {
   display: flex;
+  padding-left: 10px;
 }
 
 .icon-container {
@@ -354,4 +355,83 @@ li a {
   -moz-border-radius:10px;
   -ms-border-radius:10px;
   -o-border-radius:10px;
+}
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.burger-menu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  margin-bottom: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu:hover span {
+  background-color: orange;
+}
+
+@media only screen and (max-width: 1200px) {
+  .burger-menu {
+    display: block;
+  }
+  .burger-menu.active span {
+    background-color: orange;
+  }
+  .burger-menu.active span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-menu.active span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .navbar ul {
+    display: none;
+  }
+  .navbar .icon-box {
+    display: block;
+    margin: 10px;
+  }
+  .navbar .icon-box img {
+    height: 20px;
+  }
+  .navbar .icon-box span {
+    font-size: 16px;
+  }
+  .navbar .icon-button {
+    display: block;
+    margin: 10px;
+  }
+  .navbar .icon-button:hover .icon {
+    color: orange;
+  }
+  .navbar .dropdown-content {
+    display: none;
+  }
+  .navbar .dropdown:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    z-index: 100;
+  }
+  .navbar .dropdown-menu {
+    display: none;
+  }
+  .navbar .icon-container:hover .dropdown-menu {
+    display: block;
+  }
 }

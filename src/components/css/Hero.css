@@ -1,59 +1,58 @@
-
+.Main_b_car{
+  width:100vw;
+}
 .carousel-inner .carousel-caption {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 190px;
+  padding-bottom: 12vh;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(5vh);
   animation: fadeInUp 1s ease forwards;
 }
 
 .carousel img {
   height: 100vh;
+  width:100vw;
+
 }
 
-/* Animation for h1 */
 .carousel-inner .carousel-caption h1 {
   animation: fadeInUp 0.5s ease forwards, delayFadeInUp 0.5s ease forwards;
+  font-size: 5vw;
 }
 
-/* Animation for h3 */
 .carousel-inner .carousel-caption h3 {
   animation: fadeInUp 0.7s ease forwards, delayFadeInUp 0.7s ease forwards;
+  font-size: 3vw;
 }
 
-/* Animation for button */
 .carousel-inner .carousel-caption button {
   animation: fadeInUp 0.9s ease forwards, delayFadeInUp 0.9s ease forwards;
-}
-
-/* Animation for paragraph */
-.carousel-inner .carousel-caption p {
-  animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
-  -webkit-animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
-}
-
-/* Button style */
-.btn-O {
-  background-color: #ff7004;
-  color: white;
-  padding: 10px 20px;
+  padding: 1vw 2vw;
   border: none;
 }
 
-/* Button hover effect */
+.carousel-inner .carousel-caption p {
+  animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
+  -webkit-animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
+  font-size: 1.5vw;
+}
+
+.btn-O {
+  background-color: #ff7004;
+  color: white;
+  padding: 2vw 4vw;
+  border: none;
+}
+
 .btn-O:hover {
   background-color: #0c1e38;
   color: #ff7004;
   transition: all 0.5s;
 }
 
-/* Keyframes for fadeInUp animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(5vh);
   }
 
   to {
@@ -61,3 +60,4 @@
     transform: translateY(0);
   }
 }
+

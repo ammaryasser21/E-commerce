@@ -33,16 +33,16 @@ const ProductCat = () => {
     setSelectedOption(option);
     let sortedProducts = [...filteredProducts];
     switch (option) {
-      case 'Name(a-z)':
+      case 'Name(a - z)':
         sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
         break;
-      case 'Name(z-a)':
+      case 'Name(z - a)':
         sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
         break;
-      case 'Price(Low-High)':
+      case 'Price(Low - High)':
         sortedProducts.sort((a, b) => a.price - b.price);
         break;
-      case 'Price(High-Low)':
+      case 'Price(High - Low)':
         sortedProducts.sort((a, b) => b.price - a.price);
         break;
       default:

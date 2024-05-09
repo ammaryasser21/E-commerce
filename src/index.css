@@ -5,6 +5,13 @@
     font-family: sans-serif;
 }
 .container{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
+}
+body {
+    min-height: 100vh;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
 }

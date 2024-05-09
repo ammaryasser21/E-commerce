@@ -75,12 +75,22 @@ const Navbar = () => {
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   };
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
+  const toggleBurgerMenu = () => {
+    setShowBurgerMenu(!showBurgerMenu);
+  };
 
   return (
     <>
       <nav className={`navbar ${showNavbar ? "show" : "hide"}`}>
         <img src={Main_logo} alt="Company Logo" className="logo" />
-        <ul>
+        <button className="burger-menu" onClick={toggleBurgerMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul className={showBurgerMenu ? "show" : "hide"}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -143,9 +153,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/Contact">Contact</Link>
-          </li>
-        </ul>
-        <div className="icon-box">
+          </li><div className="icon-box">
           <div className="icon-container">
             <FaSearch className="icon" onClick={toggleSearch} />
           </div>
@@ -191,6 +199,8 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
+        </ul>
+        
       </nav>
 
       <div className={`search-bar ${showSearch ? "show" : "hide"}`}>

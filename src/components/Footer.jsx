@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="M-footer">
       <footer className="footer">
         <div className="contain">
           <div className="footer-section about-us">

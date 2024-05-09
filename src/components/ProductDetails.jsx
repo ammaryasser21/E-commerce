@@ -39,7 +39,6 @@ const ProductDetails = () => {
   const [activeFilter, setActiveFilter] = useState("Description");
   const handleAddToCart = () => {
     addToCart(product);
-  
     addAlert(alertIndex, 'Added to cart', 'Product has been added to your cart','success');
     setAlertIndex(alertIndex + 1); 
   };
@@ -47,7 +46,6 @@ const ProductDetails = () => {
   const handleAddToWishlist = () => {
     addToWishlist(product);
     setIsAddedToWishlist(true);
-    
     addAlert(alertIndex, 'Added to wishlist', 'Product has been added to your wishlist','success');
     setAlertIndex(alertIndex + 1); 
   };
@@ -115,9 +113,9 @@ const ProductDetails = () => {
               <div className="wishlist_compare_container">
                 <button className="wishlist-btn" onClick={isAddedToWishlist ? handleRemoveFromWishlist : handleAddToWishlist}>
                   {isAddedToWishlist ? (
-                    <i className="fas fa-heart"></i>
+                    <i style={{ paddingRight: '10px' }} className="fas fa-heart"></i>
                   ) : (
-                    <i className="far fa-heart"></i>
+                    <i style={{ paddingRight: '10px' }} className="far fa-heart"></i>
                   )}
                   Add to Wishlist
                 </button>
@@ -139,10 +137,11 @@ const ProductDetails = () => {
             </div>
           </section>
           <section className="des_rev">
-            <div className="filter-options-2">
-              <span className={`filter-option-2 ${activeFilter === "Description" ? "active-2" : ""}`} onClick={() => handleFilter("Description")}>Description</span>
-              <span className={`filter-option-2 ${activeFilter === "Reviews" ? "active-2" : ""}`} onClick={() => handleFilter("Reviews")}>Reviews</span>
-            </div>
+          <div className="filter-options-2">
+  <button className={`filter-option-2 ${activeFilter === "Description" ? "active-2" : ""}`} onClick={() => handleFilter("Description")}>Description</button>
+  <button className={`filter-option-2 ${activeFilter === "Reviews" ? "active-2" : ""}`} onClick={() => handleFilter("Reviews")}>Reviews</button>
+</div>
+
             <div className="mainBorder">
               {activeFilter === "Description" ? (
                   <div style={{ color: 'rgb(71, 71, 71)', margin: '10px' }}>{product.description}</div>

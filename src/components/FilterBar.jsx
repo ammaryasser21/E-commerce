@@ -5,12 +5,12 @@ const FilterBar = ({ products, handleSort }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
 
-  const options = ['Name(a-z)', 'Name(z-a)', 'Price(Low-High)', 'Price(High-Low)'];
+  const options = ['Name(a - z)', 'Name(z - a)', 'Price(Low - High)', 'Price(High - Low)'];
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
-    handleSort(option); // Call the handleSort function passed from ProductCat
+    handleSort(option);
   };
 
   return (
@@ -19,7 +19,7 @@ const FilterBar = ({ products, handleSort }) => {
         <p> Showing {products.length} products</p>
       </div>
       <div className='Sort'>
-        <p>Sort by</p>
+        <p >Sort by</p>
       </div>
       <div className="custom-dropdown">
         <div className="selected-option" onClick={() => setIsOpen(!isOpen)}>

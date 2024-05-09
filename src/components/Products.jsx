@@ -8,13 +8,13 @@ const Products = () => {
     const { addToCart, addToWishlist, removeFromCart, removeFromWishlist } = useWishlistCart();
 
   return (
-    <>
+    <div style={{width:'100vw'}}>
     <Title title="PRODUCTS"/>
     <ProductList products={products} addToCart={addToCart}
             addToWishlist={addToWishlist}
             removeFromCart={removeFromCart}
             removeFromWishlist={removeFromWishlist} />
-  </>
+  </div>
   )
 }
 

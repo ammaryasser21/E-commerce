@@ -91,13 +91,11 @@
     display: flex;
     flex: 0 0 120px;
     margin: 0px 15px 0px 0px;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: center;
     justify-content: center;
     color: rgb(71, 71, 71);
     border-radius: 50%;
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid rgb(208 206 206);
 }
 .review-content .review-img svg {
     font-size: 50px;

@@ -1,8 +1,16 @@
+
+.M-footer {
+  width: 100%;
+
+}
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 40px 40px;
+  padding: 2.5rem 2.5rem;
+  width:100%;
 }
+
+
 
 .contain {
   display: flex;
@@ -12,14 +20,12 @@
 }
 
 .footer-section {
-  margin: 40px;
-
+  margin:2.5rem 0rem;
 }
 
 .footer-section h4 {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: flex;
-
 }
 
 .footer-section ul {
@@ -29,13 +35,13 @@
 }
 
 .footer-section li {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .footer-section a {
   color: #fff;
   text-decoration: none;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   text-wrap: nowrap;
 }
 
@@ -45,7 +51,7 @@
 }
 
 .social-icons a {
-  margin-right: 15px;
+  margin-right: 0.9375rem;
 }
 
 .social-icons a:hover {
@@ -53,13 +59,13 @@
 }
 
 .footer-section li:hover {
-  transform: translateX(5px);
+  transform: translateX(0.3125rem);
   transition: transform 0.3s ease;
 }
 
 .social-icons a {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   background-color: none;
   border-radius: 50%;
   display: flex;
@@ -68,7 +74,6 @@
 }
 
 .social-icons a:hover {
-
   background-color: #ff7004;
   border-radius: 50%;
   display: flex;
@@ -82,18 +87,20 @@
 }
 
 .newsletter input {
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border: 1px grey solid;
+  display:block;
+  padding: 0.625rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+  border: 0.0625rem grey solid; 
   background-color: transparent;
+  width:12.5rem;
 }
 
 .newsletter input:hover {
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border: 1px #ff7004 solid;
+  padding: 0.625rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+  border: 0.0625rem #ff7004 solid; 
   background-color: transparent;
   outline: none;
   transition: all 0.5s;
@@ -113,7 +120,7 @@
 .subscribe-btn {
   background-color: #ff7004;
   color: #fff;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; 
   border: none;
   cursor: pointer;
 }
@@ -124,19 +131,70 @@
 }
 
 .fa-paper-plane {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 .copyright {
   text-align: center;
-  padding: 40px;
+  padding: 2.5rem;
   background-color: #000;
   color: white;
   height: 10vh;
+  width:100%
 }
 
 .heart {
   color: white;
 }
 
-/* Add media queries for responsiveness */
+@media only screen and (max-width: 480px) {
+  .footer {
+    padding: 1.25rem;
+  }
+  .contain {
+    flex-direction: column;
+  }
+  .footer-section {
+    margin: 1.25rem;
+  }
+  .footer-section h4 {
+    margin-bottom: 0.625rem;
+  }
+  .social-icons a {
+    margin-bottom: 0.625rem;
+  }
+  .newsletter input {
+    width: 100%;
+  }
+  .subscribe-btn {
+    width: 100%;
+  }
+  .copyright {
+    padding: 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    padding: 30px;
+  }
+  .contain {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    margin: 30px;
+    width: 100%;
+  }
+  .footer-section h4 {
+    margin-bottom: 15px;
+  }
+  .social-icons {
+    flex-direction: row;
+  }
+  .copyright {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
