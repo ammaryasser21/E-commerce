@@ -111,3 +111,38 @@
     margin: 0 auto;
   }
 }
+@media (max-width: 500px) {
+  .wishlist-container {
+    max-width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+  }
+  .wishlist-table {
+    padding: 5px;
+  }
+  .wishlist-container table {
+    font-size: 7px;
+  }
+  .wishlist-container th, .wishlist-container td {
+    padding: 5px;
+  }
+  .wishlist-container img {
+    width: 50px;
+    height: 50px;
+  }
+  .add-to-cart {
+    padding: 3px 5px;
+    font-size: 5px;
+  }
+  .remove-item {
+    font-size: 1em;
+  }
+  .wishlist-container table td, .wishlist-container table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .wishlist-container table td img {
+    display: block;
+    margin: 0 auto;
+  }
+}
