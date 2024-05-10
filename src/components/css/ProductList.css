@@ -1,5 +1,5 @@
 .product-list {
-    width: 100vw;
+    width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

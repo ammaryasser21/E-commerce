@@ -103,3 +103,29 @@ body {
 
  
 }
+@media (max-width: 1000px) {
+  .contact-container {
+    padding: 10px;
+  }
+  .contact-container .contact-info {
+    padding: 10px;
+  }
+  .contact-container .contact-form {
+    padding: 10px;
+  }
+  .contact-container .contact-info h2 {
+    font-size: 18px;
+  }
+  .contact-container .contact-form h2 {
+    font-size: 18px;
+  }
+  .contact-container .contact-form input,
+  .contact-container .contact-form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  .contact-container .contact-form button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}

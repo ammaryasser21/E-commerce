@@ -1,5 +1,4 @@
 import React, { useState } from'react';
-import './css/SignUp.css';
 import Title from './Title';
 import Alert from './Alert';
 

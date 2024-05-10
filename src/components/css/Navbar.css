@@ -133,7 +133,7 @@
   position: absolute;
   top: 15vh;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 85vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1500;
@@ -377,10 +377,33 @@ li a {
   background-color: orange;
 }
 
+
 @media only screen and (max-width: 1200px) {
   .burger-menu {
     display: block;
   }
+  nav ul{
+    display: none;
+  }
+  .show-ul{
+    display:block;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%,-50%);
+    top: 100%;
+    width: 50vw;
+    padding: 10px 20px;
+    background-color: #f8f8f8  ;
+    -webkit-transform: translateX(-50%,-50%);
+    -moz-transform: translateX(-50%,-50%);
+    -ms-transform: translateX(-50%,-50%);
+    -o-transform: translateX(-50%,-50%);
+}
+.show-ul li{
+  padding: 10px;
+}
   .burger-menu.active span {
     background-color: orange;
   }
@@ -393,12 +416,10 @@ li a {
   .burger-menu.active span:last-child {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-  .navbar ul {
-    display: none;
-  }
   .navbar .icon-box {
-    display: block;
-    margin: 10px;
+    display: flex;
+    flex-direction: row;
+
   }
   .navbar .icon-box img {
     height: 20px;
@@ -419,8 +440,8 @@ li a {
   .navbar .dropdown:hover .dropdown-content {
     display: block;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 80%;
+    left: -150px;
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -430,8 +451,7 @@ li a {
   }
   .navbar .dropdown-menu {
     display: none;
+   
   }
-  .navbar .icon-container:hover .dropdown-menu {
-    display: block;
-  }
+
 }

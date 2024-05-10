@@ -1,8 +1,8 @@
 .Main_b_car{
-  width:100vw;
+  width:100%;
 }
 .carousel-inner .carousel-caption {
-  padding-bottom: 12vh;
+  padding-bottom: 10rem;
   opacity: 0;
   transform: translateY(5vh);
   animation: fadeInUp 1s ease forwards;
@@ -16,24 +16,26 @@
 
 .carousel-inner .carousel-caption h1 {
   animation: fadeInUp 0.5s ease forwards, delayFadeInUp 0.5s ease forwards;
-  font-size: 5vw;
+  font-size: 3rem;
 }
 
 .carousel-inner .carousel-caption h3 {
   animation: fadeInUp 0.7s ease forwards, delayFadeInUp 0.7s ease forwards;
-  font-size: 3vw;
+  font-size: 1.5rem;
+  -webkit-animation: fadeInUp 0.7s ease forwards, delayFadeInUp 0.7s ease forwards;
 }
 
 .carousel-inner .carousel-caption button {
   animation: fadeInUp 0.9s ease forwards, delayFadeInUp 0.9s ease forwards;
-  padding: 1vw 2vw;
+  padding: 1rem 2rem;
+  font-size: 1rem;
   border: none;
 }
 
 .carousel-inner .carousel-caption p {
   animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
   -webkit-animation: fadeInUp 1s ease forwards, delayFadeInUp 0.3s ease forwards;
-  font-size: 1.5vw;
+  font-size: 1rem;
 }
 
 .btn-O {
@@ -61,3 +63,32 @@
   }
 }
 
+@media (max-width: 592px) {
+  .Main_b_car {
+    width: 100%;
+  }
+  .carousel img {
+    height: 100vh;
+    width: 100vw;
+  }
+  .carousel-inner .carousel-caption {
+    padding-bottom: 10rem;
+  }
+  .carousel-inner .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  .carousel-inner .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+  .carousel-inner .carousel-caption button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .carousel-inner .carousel-caption p {
+    font-size: 0.8rem;
+  }
+  .btn-O {
+    padding: 1vw 2vw;
+    font-size: 0.8rem;
+  }
+}

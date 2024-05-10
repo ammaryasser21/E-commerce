@@ -154,3 +154,53 @@ margin-bottom:30px;
 padding:10px;
 border:1px solid #ddd5d5;
 }
+@media only screen and (max-width: 1000px) {
+  /* Mobile-specific styles here */
+  .section {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .images {
+    width: 100%;
+  }
+  .product_details {
+    width: 100%;
+    font-size: medium;
+  }
+  .price {
+    font-size: 20px;
+  }
+  .counter_button {
+    width: 40px;
+    height: 40px;
+  }
+  .counter_value {
+    width: 80px;
+    height: 40px;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  .add_to_cart {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+  }
+  .cart-btn {
+    padding: 10px 20px;
+    margin-left:10px;
+  }
+  .wishlist_compare_container {
+    flex-direction: column;
+  }
+  .wishlist-btn {
+    padding-top: 10px;
+  }
+  .share {
+    padding-top: 2%;
+  }
+  
+  .mainBorder {
+    width: 90vw;
+    padding: 5px;
+  }
+}

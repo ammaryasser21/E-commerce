@@ -76,3 +76,38 @@
   display: block;
   margin: 0 auto;
 }
+@media (max-width: 1000px) {
+  .wishlist-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .wishlist-table {
+    padding: 10px;
+  }
+  .wishlist-container table {
+    font-size: 14px;
+  }
+  .wishlist-container th, .wishlist-container td {
+    padding: 10px;
+  }
+  .wishlist-container img {
+    width: 50px;
+    height: 50px;
+  }
+  .add-to-cart {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+  .remove-item {
+    font-size: 1em;
+  }
+  .wishlist-container table td, .wishlist-container table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .wishlist-container table td img {
+    display: block;
+    margin: 0 auto;
+  }
+}

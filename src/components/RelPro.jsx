@@ -21,9 +21,13 @@ const RelPro = ({ type }) => {
         fontSize: '36px',
         marginBottom: '15px',
         fontWeight: '700',
-        marginLeft:'70px'
-
-    };
+        marginLeft: '70px',
+        '@media only screen and (max-width: 1200px)': {
+          fontSize: '24px',
+          fontWeight: '200',
+          marginLeft: '20px',
+        },
+      };
 
     return (
         <>

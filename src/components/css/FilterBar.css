@@ -63,3 +63,37 @@ max-width: 200px;
 .options li:hover {
     background-color: #e8e8e8;
 }
+@media (max-width: 1000px) {
+    .superdiv {
+        position: relative;
+      flex-direction: column;
+      padding: 10px 5px;
+      margin: 10px auto;
+      z-index: 100;
+    }
+    .Showing {
+      padding-top: 2%;
+    }
+    .Sort {
+      padding:0;
+      padding-top: 2%;
+    }
+
+    .list {
+      max-width: 150px;
+    }
+    .custom-dropdown {
+      width: 100%;
+    }
+    .selected-option {
+      padding: 5px 10px;
+      padding-right: 40px;
+    }
+    .options {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .options li {
+      padding: 5px 10px;
+    }
+  }

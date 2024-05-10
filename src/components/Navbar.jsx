@@ -90,7 +90,7 @@ const Navbar = () => {
           <span></span>
           <span></span>
         </button>
-        <ul className={showBurgerMenu ? "show" : "hide"}>
+        <ul className={showBurgerMenu ? "show-ul" : "hide-ul"}>
           <li>
             <Link to="/">Home</Link>
           </li>

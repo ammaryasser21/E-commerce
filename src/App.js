@@ -25,7 +25,7 @@ const App = () => {
     <div>
       
       <ProductProvider>
-        <WishlistCartProvider> {/* Wrap the entire Routes block with WishlistCartProvider */}
+        <WishlistCartProvider> 
           <BrowserRouter>
             <Navbar />
             <Routes>

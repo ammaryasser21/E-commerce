@@ -22,7 +22,6 @@
  .empty-icon span p{
  font-size:170px;
 }
-/* Button style */
 .btn-O {
     background-color: #ff7004;
     color: white;
@@ -30,7 +29,6 @@
     border: none;
   }
   
-  /* Button hover effect */
   .btn-O:hover {
     background-color: #000;
     color: white;

@@ -10,3 +10,12 @@
     color:black;
     font-weight:550;
     }
+    @media (max-width: 1000px) {
+        .empty-icon {
+          padding: 20px 0 10px 0;
+          gap: 5px 10px;
+        }
+        .empty-icon h5 {
+          font-size: 18px;
+        }
+      }

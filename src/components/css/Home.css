@@ -53,7 +53,7 @@
 
 .category-grid {
   display: flex;
-  width: 100vw;
+  width: 100%;
   flex-wrap: wrap;
   padding: 3.125rem; 
   flex-direction: row;
@@ -104,7 +104,7 @@
 }
 
 .Home-comp{
-  width:100vw;
+  width:100%;
 }
 @media (max-width: 500px) {
   .category-grid {
