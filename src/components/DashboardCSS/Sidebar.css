@@ -1,0 +1,32 @@
+.inner{
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.side_eles{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.element{
+    margin: 0 0;
+    padding-left: 30px;
+    padding: 15px 0 15px 30px ;
+    border-left: 3px solid #eee ;
+}
+.element:hover{
+    color: #ff7004;
+    background-color: #eee;
+    border-radius: 0 30px 30px 0;
+    border-left: 3px solid #ff7004 ;
+}
+.logo{
+    margin: 20px 0 0 10px;
+    position: relative;
+}
+
+@media (max-width:767px) {
+
+}

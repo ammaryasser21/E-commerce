@@ -1,0 +1,15 @@
+table{
+    border: 2px solid #ccc;
+    width: 98%;
+    margin: 10px;
+    text-align: center;
+    scroll-behavior: smooth;
+    scrollbar-width: 5px;
+    scrollbar-color: black;
+}
+th,td{
+    white-space: nowrap;
+}
+th{
+    background-color: #eee;
+}

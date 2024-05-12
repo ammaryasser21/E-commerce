@@ -1,0 +1,23 @@
+@media (max-width:767px) {
+    .page{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar{
+        display: none;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .mobile-navbar{
+        display: block;
+        padding: 10px 0 10px 20px;
+    }
+    .nav-elements{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-ele{
+        margin-bottom: 5px;
+    }
+}

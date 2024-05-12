@@ -1,0 +1,91 @@
+p{
+    font-size: 14px;
+}
+.input-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-field{
+    width: 80%;
+    background-color: #eee;
+    border-radius: 5px;
+    height: 50px;
+}
+.input-field:focus{
+    border-color: #eee;
+}
+.input-field::placeholder{
+    color: #aaa;
+}
+.select-cat{
+    width: 80%;
+    height: 40px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.buttons{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 0 22px;
+
+}
+.PC-btn{
+    width: 30%;
+    margin: 0;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.sign-in-btn{
+    background-color: #ff7004;
+    margin: 5px 0 20px 0;
+    padding: 12px 0;
+    min-width: 100px;
+    transition: 0.3s;
+}
+.sign-in-btn:hover{
+    background-color: #2f333a;
+    color: white;
+}
+.cancel-btn{
+    padding: 11px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: white;
+    color: red;
+}
+.cancel-btn:hover{
+    background-color:#FFF3F0;
+    color: red;
+}
+@media (max-width:767px) {
+    .box{
+        padding: 10px;
+        margin: 15px 0 15px 0;
+    }
+    .input-field{
+        width: 58%;
+        background-color: #eee;
+        border-radius: 5px;
+        height: 50px;
+    }
+    .input-div{
+        display: flex;
+        align-items: center;
+    }
+    .select-cat{
+        width: 58%;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .PC-btn{
+        font-size: 11px;
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Registration from './components/Registration.jsx';
 import Cart from './components/Cart.jsx';
@@ -16,20 +16,46 @@ import Products from './components/Products.jsx';
 import ProductDetails from './components/ProductDetails.jsx';
 import NotFound from './components/NotFound.jsx';
 
+import Login from "./components/Login.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import Ourteam from "./components/Ourteam.jsx";
+import Orders from "./components/Orders.jsx";
+import Dashproduct from "./components/Dashproduct.jsx";
+import Dashcategory from "./components/Dashcategory.jsx";
+import Dashsignin from "./components/Dashsingin.jsx";
 
 import { ProductProvider } from './ProductContext';
 import { WishlistCartProvider } from "./WishlistCartContext";
 
+
 const App = () => {
   return (
     <div>
-      
       <ProductProvider>
-        <WishlistCartProvider> 
+        <WishlistCartProvider>
           <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" index element={<Home />} />
+            <AppInner />
+          </BrowserRouter>
+        </WishlistCartProvider>
+      </ProductProvider>
+    </div>
+  );
+};
+
+const AppInner = () => {
+  const location = useLocation();
+
+  const showNavbarAndFooter = () => {
+    const dashboardRoutes = ['/Dashboard', '/OurTeam', '/Orders', '/Dashproduct', '/Dashcategory', '/Dashsignin'];
+    return !dashboardRoutes.includes(location.pathname);
+  };
+
+  return (
+    <div>
+      {showNavbarAndFooter() && <Navbar />}
+      <Routes>
+      <Route path="/" index element={<Home />} />
               <Route path="/About" element={<About />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Registration" element={<Registration />} />
@@ -42,13 +68,20 @@ const App = () => {
               <Route path="/ProductDetails" element={<ProductDetails />} />
               <Route path="/Products" element={<Products />} />
               <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-        </WishlistCartProvider>
-      </ProductProvider>
+              <Route path="/Login" element={<Login />} />
+              <Route path="/SignUp" element={<SignUp />} />
+              <Route path="/Dashboard" element={<Dashboard />} />
+              <Route path="/OurTeam" element={<Ourteam />} />
+              <Route path="/Orders" element={<Orders />} />
+              <Route path="/Dashproduct" element={<Dashproduct />} />
+              <Route path="/Dashcategory" element={<Dashcategory />} />
+              <Route path="/Dashsignin" element={<Dashsignin />} />{/* your routes here */}
+      </Routes>
+      {showNavbarAndFooter() && <Footer />}
     </div>
-  )
-}
+  );
+};
 
-export default App;
+
+
+ export default App;
