@@ -12,7 +12,7 @@ import Mobilenavbar from "./Mobilenavbar";
 
 const Dashboard = () => {
   return (
-    <>
+    
       <div className="page">
         <Sidebar />
         <Mobilenavbar />
@@ -55,27 +55,10 @@ const Dashboard = () => {
                 </i>
               </div>
             </div>
-            {/* <div className="order-stats">
-              <div className="total-orders">
-                <div className="i-bg">
-                  <FontAwesomeIcon
-                    className="cart-icon"
-                    icon={faCartShopping}
-                  />
-                  <FontAwesomeIcon icon={faBorderAll} />
-                </div>
-                <div>
-                  <p>Total orders</p>
-                  <span>0</span>
-                </div>
-              </div>
-            </div> */}
-            {/*  */}
-            <div>{/* some statistics charts */}</div>
           </div>
         </section>
       </div>
-    </>
+    
   );
 };
 

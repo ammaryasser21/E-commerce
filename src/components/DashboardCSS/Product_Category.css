@@ -20,9 +20,13 @@ p{
 }
 .select-cat{
     width: 80%;
-    height: 40px;
     border: 1px solid #aaa;
     border-radius: 5px;
+    padding: 15px;
+}
+.select-cat select:focus{
+    width: 80%;
+    border: none;
 }
 .buttons{
  display: flex;
@@ -55,7 +59,7 @@ p{
     border: 1px solid #eee;
     border-radius: 8px;
     background-color: white;
-    color: red;
+    color: red !important;
 }
 .cancel-btn:hover{
     background-color:#FFF3F0;

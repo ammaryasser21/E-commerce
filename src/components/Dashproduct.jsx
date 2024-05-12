@@ -68,7 +68,7 @@ const T_row = [
 
 const Dashproduct = () => {
   return (
-    <>
+    
       <div className="page">
         <Sidebar />
         <Mobilenavbar />
@@ -84,32 +84,32 @@ const Dashproduct = () => {
             <p>Add your product and necessary information from here</p>
           </div>
           <form className="box">
-            <div class=" input-div box ">
-              <label for="ProID" class="form-label">
+            <div className=" input-div box ">
+              <label htmlFor="ProID" className="form-label">
                 Product ID
               </label>
               <input
                 className="form-control input-field"
                 type="text"
                 placeholder="Product ID"
-                class="form-control input-field"
+                
                 id="ProID"
               />
             </div>
-            <div class=" input-div box ">
-              <label for="ProName" class="form-label">
+            <div className=" input-div box ">
+              <label htmlFor="ProName" className="form-label">
                 Product Title/Name
               </label>
               <input
                 className="form-control input-field"
                 type="text"
                 placeholder="Product Title/Name"
-                class="form-control input-field"
+                
                 id="ProName"
               />
             </div>
-            <div class=" input-div box">
-              <label for="ProDes" class="form-label">
+            <div className=" input-div box">
+              <label htmlFor="ProDes" className="form-label">
                 Product Description
               </label>
               <input
@@ -119,8 +119,8 @@ const Dashproduct = () => {
                 placeholder="Product Description"
               />
             </div>
-            <div class=" input-div box">
-              <label for="ProImg" class="form-label">
+            <div className=" input-div box">
+              <label htmlFor="ProImg" className="form-label">
                 Product Image
               </label>
               <input
@@ -131,7 +131,7 @@ const Dashproduct = () => {
               />
             </div>
             <div className=" input-div box">
-              <label for="ProCat" class="form-label">
+              <label htmlFor="ProCat" className="form-label">
                 Category
               </label>
               <select className="select-cat" name="Category" id="ProCat">
@@ -143,23 +143,23 @@ const Dashproduct = () => {
               </select>
             </div>
             <div className="input-div box">
-              <label for="ProPrice" class="form-label">
+              <label htmlFor="ProPrice" className="form-label">
                 Product Price
               </label>
               <input
                 type="text"
-                class="form-control input-field"
+                className="form-control input-field"
                 id="ProPrice"
                 placeholder="Product Price"
               />
             </div>
             <div className=" input-div box">
-              <label for="Discount" class="form-label">
+              <label htmlFor="Discount" className="form-label">
                 Discount
               </label>
               <input
                 type="text"
-                class="form-control input-field"
+                className="form-control input-field"
                 id="Discount"
                 placeholder="Product Discount"
               />
@@ -181,7 +181,7 @@ const Dashproduct = () => {
           </div>
         </section>
       </div>
-    </>
+    
   );
 };
 export default Dashproduct;

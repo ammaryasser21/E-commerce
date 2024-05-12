@@ -46,7 +46,7 @@ const T_row = [
 
 const Dashcategory = () => {
   return (
-    <>
+    
       <div className="page">
         <Sidebar />
         <Mobilenavbar />
@@ -62,32 +62,30 @@ const Dashcategory = () => {
             <p>Add your Category and necessary information from here</p>
           </div>
           <form className="box">
-            <div class=" d-flex justify-content-between align-items-center box ">
-              <label for="CatID" class="form-label">
+            <div className=" d-flex justify-content-between align-items-center box ">
+              <label htmlFor="CatID" className="form-label">
                 Category ID
               </label>
               <input
                 className="form-control input-field"
                 type="text"
                 placeholder="Category ID"
-                class="form-control input-field"
                 id="CatID"
               />
             </div>
             <div className=" d-flex justify-content-between align-items-center box">
-              <label for="CatName" class="form-label">
+              <label htmlFor="CatName" className="form-label">
                 Category Name
               </label>
               <input
                 className="form-control input-field"
                 type="text"
                 placeholder="Product Name/Title"
-                class="form-control input-field"
                 id="CatName"
               />
             </div>
-            <div class=" d-flex justify-content-between align-items-center box">
-              <label for="CatImg" class="form-label">
+            <div className=" d-flex justify-content-between align-items-center box">
+              <label htmlFor="CatImg" className="form-label">
                 Category Image
               </label>
               <input
@@ -98,14 +96,13 @@ const Dashcategory = () => {
               />
             </div>
             <div className=" d-flex justify-content-between align-items-center box">
-              <label for="CatAlt" class="form-label">
+              <label htmlFor="CatAlt" className="form-label">
                 Alternate Text
               </label>
               <input
                 className="form-control input-field"
                 type="text"
                 placeholder="Alternate Text"
-                class="form-control input-field"
                 id="CatAlt"
               />
             </div>
@@ -126,7 +123,7 @@ const Dashcategory = () => {
           </div>
         </section>
       </div>
-    </>
+    
   );
 };
 export default Dashcategory;

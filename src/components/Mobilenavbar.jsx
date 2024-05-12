@@ -39,8 +39,8 @@ const navItemsAndIcons = [
     icon: faUsers,
   },
   {
-    navName: "Sign in",
-    linkName: "Dashsignin",
+    navName: "Log out",
+    linkName: "",
     icon: faUser,
   },
 ];
