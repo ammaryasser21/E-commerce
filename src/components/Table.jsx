@@ -3,41 +3,53 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Table = (props) => {
+const Table = ({ tableType, T_head, T_row, onEdit, onDelete }) => {
   return (
     <>
-      {props.tableType === "Dashproduct" ? (
-        <table class="table">
+      {tableType === "Dashproduct" ? (
+        <table className="table">
           <thead className="t-head">
             <tr>
-              {props.T_head.map((item) => (
-                <th
+              {T_head.map((item) => (
+                <th key={item.id}
                   scope="col"
-                  style={{
-                    backgroundColor: "#eee",
-                  }}
                 >
                   {item}
                 </th>
               ))}
-              <th scope="col" style={{ backgroundColor: "#eee" }}>
+              <th scope="col">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody class="">
-            {props.T_row.map((row) => (
-              <tr>
+          <tbody className="">
+            {T_row.map((row) => (
+
+            
+              <tr key={row.name}>
                 <th scope="row">{row.id}</th>
                 <td>{row.name}</td>
+                <td>{row.category}</td>
+                <td> <img style={{width:"50px"}} src={row.photo} alt=""  /></td>
+                <td>{row.isNew ? "Yes" : "No"}</td>
+
+                <td>{row.isFeatured? "Yes" : "No"}</td>
+                <td>{row.isTrending? "Yes" : "No"}</td>
+                <td>{row.isOneSale? "Yes" : "No"}</td>
                 <td>{row.price}</td>
                 <td>{row.discount}</td>
-                <td>{row.number}</td>
-                <td>{row.category}</td>
+                <td>{row.capacity}</td>
+                
+                
 
                 <td>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div>
+                    <button
+                      onClick={() => onEdit(row)}
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none"
+                      }}>
                       <FontAwesomeIcon
                         icon={faPenSquare}
                         style={{
@@ -46,8 +58,14 @@ const Table = (props) => {
                           height: "20px",
                         }}
                       />
-                    </div>
-                    <div>
+                    </button>
+                    <button
+                      onClick={() => onDelete(row.id)}
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none"
+                      }}
+                    >
                       <FontAwesomeIcon
                         icon={faTrashCan}
                         style={{
@@ -57,7 +75,7 @@ const Table = (props) => {
                           marginLeft: "20px",
                         }}
                       />
-                    </div>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -66,15 +84,15 @@ const Table = (props) => {
         </table>
       ) : null}
 
-      {props.tableType === "Ourteam" ? (
-        <table class="table">
+      {tableType === "Ourteam" ? (
+        <table className="table">
           <thead className="t-head">
             <tr>
-              {props.T_head.map((item) => (
+              {T_head.map((item) => (
                 <th
+                  key={item.name}
                   scope="col"
                   style={{
-                    backgroundColor: "#eee",
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -83,9 +101,9 @@ const Table = (props) => {
               ))}
             </tr>
           </thead>
-          <tbody class="">
-            {props.T_row.map((row) => (
-              <tr>
+          <tbody>
+            {T_row.map((row) => (
+              <tr key={row.name}>
                 <th scope="row">{row.name}</th>
                 <td>{row.role}</td>
                 <td>{row.email}</td>
@@ -97,29 +115,26 @@ const Table = (props) => {
         </table>
       ) : null}
 
-      {props.tableType === "Orders" ? (
-        <table class="table">
+      {tableType === "Orders" ? (
+        <table className="table">
           <thead className="t-head">
             <tr>
-              {props.T_head.map((item) => (
+              {T_head.map((item) => (
                 <th
+                  key={item.id}
                   scope="col"
-                  style={{
-                    backgroundColor: "#eee",
-                  }}
                 >
                   {item}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody class="">
-            {props.T_row.map((row) => (
-              <tr>
+          <tbody>
+            {T_row.map((row) => (
+              <tr key={row.invoice_no}>
                 <th scope="row">{row.invoice_no}</th>
                 <td>{row.Order_time}</td>
                 <td>{row.cusName}</td>
-                <td>{row.method}</td>
                 <td>{row.amount}</td>
               </tr>
             ))}
@@ -127,35 +142,39 @@ const Table = (props) => {
         </table>
       ) : null}
 
-      {props.tableType === "Dashcategory" ? (
-        <table class="table">
+      {tableType === "Dashcategory" ? (
+        <table className="table">
           <thead className="t-head">
             <tr>
-              {props.T_head.map((item) => (
+              {T_head.map((item) => (
                 <th
+                  key={item.id}
                   scope="col"
-                  style={{
-                    backgroundColor: "#eee",
-                  }}
                 >
                   {item}
                 </th>
               ))}
-              <th scope="col" style={{ backgroundColor: "#eee" }}>
+              <th scope="col">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody class="">
-            {props.T_row.map((row) => (
-              <tr>
+          <tbody>
+            {T_row.map((row) => (
+              <tr key={row.id}>
                 <th scope="row">{row.id}</th>
                 <td>{row.category}</td>
                 <td>{row.altText}</td>
 
                 <td>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div>
+                    <button
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none"
+                      }}
+                      onClick={() => onEdit(row)}
+                    >
                       <FontAwesomeIcon
                         icon={faPenSquare}
                         style={{
@@ -164,8 +183,14 @@ const Table = (props) => {
                           height: "20px",
                         }}
                       />
-                    </div>
-                    <div>
+                    </button>
+                    <button
+                      onClick={() => onDelete(row.id)}
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none"
+                      }}
+                    >
                       <FontAwesomeIcon
                         icon={faTrashCan}
                         style={{
@@ -175,7 +200,7 @@ const Table = (props) => {
                           marginLeft: "20px",
                         }}
                       />
-                    </div>
+                    </button>
                   </div>
                 </td>
               </tr>

@@ -7,22 +7,19 @@ const T_head = [
   "invoice no",
   "order time",
   "customer name",
-  "method",
   "amount",
 ];
 const T_row = [
   {
-    invoice_no: "3",
+    invoice_no: "1",
     Order_time: "Apr 27, 2024 9:16 AM",
     cusName: "ammar",
-    method: "Cash",
     amount: "$1025.51",
   },
   {
-    invoice_no: "4",
+    invoice_no: "2",
     Order_time: "Apr 27, 2024 9:16 AM",
     cusName: "ammar",
-    method: "Cash",
     amount: "$1025.51",
   },
 ];

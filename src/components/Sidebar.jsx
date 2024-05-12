@@ -10,7 +10,6 @@ import {
   faUser,
   faUsers,
   faTableCellsLarge,
-  faLayerGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
 const navItemsAndIcons = [
@@ -23,11 +22,6 @@ const navItemsAndIcons = [
     navName: "Product",
     linkName: "Dashproduct",
     icon: faCompass,
-  },
-  {
-    navName: "Category",
-    linkName: "Dashcategory",
-    icon: faLayerGroup,
   },
   {
     navName: "Orders",
