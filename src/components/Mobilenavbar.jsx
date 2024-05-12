@@ -47,10 +47,10 @@ const navItemsAndIcons = [
 
 const Mobilenavbar = () => {
   return (
-    <>
+    
       <div className="burger-menu">
         <div
-          class="collapse"
+          className="collapse"
           id="navbarToggleExternalContent"
           data-bs-theme="dark"
         >
@@ -58,6 +58,7 @@ const Mobilenavbar = () => {
             <nav className="nav-elements">
               {navItemsAndIcons.map((item) => (
                 <Link
+                key={item.navName}
                   to={{ pathname: `/${item.linkName}` }}
                   style={{ display: "flex" }}
                   className="nav-ele"
@@ -71,10 +72,10 @@ const Mobilenavbar = () => {
             </nav>
           </div>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
-          <div class="container-fluid">
+        <nav className="navbar navbar-dark">
+          <div className="container-fluid">
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarToggleExternalContent"
@@ -82,12 +83,12 @@ const Mobilenavbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
           </div>
         </nav>
       </div>
-    </>
+    
   );
 };
 

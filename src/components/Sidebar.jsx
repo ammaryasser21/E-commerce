@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Main_logo from "../assets/_images_logo_logo.png";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "../components/DashboardCSS/Sidebar.css";
@@ -39,15 +40,23 @@ const navItemsAndIcons = [
     icon: faUsers,
   },
   {
-    navName: "Sign in",
-    linkName: "Dashsignin",
+    navName: "Logout",
+    linkName: "",
     icon: faUser,
   },
 ];
+
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token-admin');
+    navigate('/', { replace: true });
+  };
+
   return (
     <aside className="sidebar">
-      <Link to={{ pathname: `/` }}>
+      <Link to={{ pathname: `/Dashboard` }}>
         <div className="side-img">
           <img className="logo" src={Main_logo} alt="" />
         </div>
@@ -55,16 +64,23 @@ const Sidebar = () => {
       <div className="inner">
         <nav className="side_eles">
           {navItemsAndIcons.map((item) => (
-            <Link
-              to={{ pathname: `/${item.linkName}` }}
-              style={{ display: "flex" }}
-              className="element"
-            >
-              <div className="side-icon" style={{ marginRight: "10px" }}>
-                <FontAwesomeIcon icon={item.icon} />
-              </div>
-              {item.navName}
-            </Link>
+            <div key={item.navName} style={{ display: "flex" }} className="element">
+              {item.linkName ? (
+                <Link to={{ pathname: `/${item.linkName}` }} style={{ display: "flex" }}>
+                  <div className="side-icon" style={{ marginRight: "10px" }}>
+                    <FontAwesomeIcon icon={item.icon} />
+                  </div>
+                  {item.navName}
+                </Link>
+              ) : (
+                <div onClick={handleLogout} style={{ display: "flex", cursor: "pointer" }}>
+                  <div className="side-icon" style={{ marginRight: "10px" }}>
+                    <FontAwesomeIcon icon={item.icon} />
+                  </div>
+                  {item.navName}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
       </div>

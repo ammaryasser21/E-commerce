@@ -1,4 +1,5 @@
-import React, { useState } from'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/Login.css';
 import Title from './Title';
 import Alert from './Alert';
@@ -9,6 +10,7 @@ const Login = ({ onCreateAccount, onSignIn }) => {
   const [alerts, setAlerts] = useState([]);
   const [errors, setErrors] = useState({});
 
+  const navigate = useNavigate();
   const handleSignIn = (event) => {
     event.preventDefault();
     const errors = {};
@@ -22,15 +24,20 @@ const Login = ({ onCreateAccount, onSignIn }) => {
     }
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
-    } else {
-      const storedAccounts = JSON.parse(localStorage.getItem('accounts'));
-      if (storedAccounts[email].password === password) {
-        localStorage.setItem('token', email);
-        onSignIn(email, password);
+    } 
+      if (email === 'admin@gmail.com' && password === 'admin') {
+        localStorage.setItem('token-admin', 'admin');
+        navigate('/Dashboard', { replace: true });
       } else {
-        setAlerts([...alerts, { type: 'error', title: 'Error', description: 'Invalid email or password' }]);
+        const storedAccounts = JSON.parse(localStorage.getItem('accounts'));
+        if (storedAccounts[email].password === password) {
+          localStorage.setItem('token', email);
+          onSignIn(email, password);
+        } else {
+          setAlerts([...alerts, { type: 'error', title: 'Error', description: 'Invalid email or password' }]);
+        }
       }
-    }
+    
   };
 
   return (

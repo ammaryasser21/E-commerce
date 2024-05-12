@@ -23,7 +23,6 @@ import Ourteam from "./components/Ourteam.jsx";
 import Orders from "./components/Orders.jsx";
 import Dashproduct from "./components/Dashproduct.jsx";
 import Dashcategory from "./components/Dashcategory.jsx";
-import Dashsignin from "./components/Dashsingin.jsx";
 
 import { ProductProvider } from './ProductContext';
 import { WishlistCartProvider } from "./WishlistCartContext";
@@ -47,7 +46,7 @@ const AppInner = () => {
   const location = useLocation();
 
   const showNavbarAndFooter = () => {
-    const dashboardRoutes = ['/Dashboard', '/OurTeam', '/Orders', '/Dashproduct', '/Dashcategory', '/Dashsignin'];
+    const dashboardRoutes = ['/Dashboard', '/Ourteam', '/Orders', '/Dashproduct', '/Dashcategory'];
     return !dashboardRoutes.includes(location.pathname);
   };
 
@@ -75,7 +74,6 @@ const AppInner = () => {
               <Route path="/Orders" element={<Orders />} />
               <Route path="/Dashproduct" element={<Dashproduct />} />
               <Route path="/Dashcategory" element={<Dashcategory />} />
-              <Route path="/Dashsignin" element={<Dashsignin />} />{/* your routes here */}
       </Routes>
       {showNavbarAndFooter() && <Footer />}
     </div>
