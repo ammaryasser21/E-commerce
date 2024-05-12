@@ -15,7 +15,7 @@
 .contain {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #333;
 }
 
