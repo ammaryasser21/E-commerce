@@ -11,6 +11,7 @@ const ProductSearch = () => {
   const { addToCart, addToWishlist, removeFromCart, removeFromWishlist } = useWishlistCart();
   const location = useLocation();
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedOption, setSelectedOption] = useState('');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -18,7 +19,6 @@ const ProductSearch = () => {
     const searchParam = queryParams.get('search');
     
     if (searchParam) {
-      // Filter products that contain the letter 'b' in their name
       const filtered = products.filter(product => product.name.toLowerCase().includes(searchParam));
       setFilteredProducts(filtered);
       setSearch(searchParam);
@@ -27,10 +27,33 @@ const ProductSearch = () => {
       setSearch('');
     }
   }, [location, products]);
+
+  const handleSort = (option) => {
+    setSelectedOption(option);
+    let sortedProducts = [...filteredProducts];
+    switch (option) {
+      case 'Name(a - z)':
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'Name(z - a)':
+        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'Price(Low - High)':
+        sortedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case 'Price(High - Low)':
+        sortedProducts.sort((a, b) => b.price - a.price);
+        break;
+      default:
+        break;
+    }
+    setFilteredProducts(sortedProducts);
+  };
+
   return (
     <>
     <Title title="SEARCH" type={search}/>
-    <FilterBar products={filteredProducts} />
+    <FilterBar products={filteredProducts} handleSort={handleSort} />
     <ProductList products={filteredProducts} 
     addToCart={addToCart}
             addToWishlist={addToWishlist}

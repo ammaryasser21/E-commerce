@@ -103,15 +103,6 @@
   .product-price {
     position: relative;
   }
-  .product-price .product-discount::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  top: 50%;
-  background-color: rgb(145, 145, 145);
-  left: 2px;
-  }
   .product-discount {
     color:rgb(145, 145, 145);
   }

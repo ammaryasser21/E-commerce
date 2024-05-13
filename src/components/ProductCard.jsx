@@ -54,7 +54,7 @@ const ProductCard = ({
   return (
     <div className="product-card">
       <div className="product-photo">
-        <Link to={{ pathname: "/ProductDetails", search: `?id=${product.id}` }}>
+        <Link to={{ pathname: "/ProductDetails", search: `?id=${product._id}` }}>
           <img
             src={product.photo}
             alt={product.name}
@@ -63,7 +63,8 @@ const ProductCard = ({
         </Link>
         {product.discount !== 0 && (
           <span className="new-badge">
-            - {((product.price - product.discount) / product.price) * 100}%
+            {(((product.price - product.discount) / product.discount) * 100).toFixed(1)}%
+
           </span>
         )}
         {isAddedToWishlist ? (
@@ -97,7 +98,7 @@ const ProductCard = ({
         <h3 className="product-price">
           {product.discount > 0 ? (
             <>
-              <span className="product-discount">${product.discount}</span>
+              <del className="product-discount">${product.discount}</del>
               <span className="product-price">${product.price}</span>
             </>
           ) : (

@@ -40,20 +40,19 @@ const Navbar = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
-    const storedUsername = localStorage.getItem('username');
-    if (storedToken) {
+    const storedToken1 = localStorage.getItem('admin-token');
+    if (storedToken||storedToken1) {
       setIsLoggedIn(true);
-      setUsername(storedUsername);
     }
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    localStorage.removeItem('admin-token');
     setIsLoggedIn(false);
   };
 
@@ -164,13 +163,13 @@ const Navbar = () => {
             >
               <FaUser className="icon" />
               <ul className="dropdown-content">
-              {isLoggedIn && (
+              {/* {isLoggedIn && (
                   
                     <li>
                       <Link to="/">{username}</Link>
                     </li>
                     
-                )}
+                )} */}
                 <li>
                   <Link to="/Cart">Cart</Link>
                 </li>

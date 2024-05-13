@@ -26,7 +26,7 @@ const ProductDetails = () => {
     const queryParams = new URLSearchParams(location.search);
     const idParam = queryParams.get("id");
     // eslint-disable-next-line eqeqeq
-    const foundProduct = products.find((product) => product.id == idParam);
+    const foundProduct = products.find((product) => product._id == idParam);
 
     if (foundProduct) {
       setProduct(foundProduct);
@@ -79,7 +79,7 @@ const ProductDetails = () => {
               <div className="SKU">
                 <p>
                   <strong>SKU:</strong>
-                   {product.id}
+                   {product._id}
                 </p>
               </div>
               <div className="Availability">
@@ -146,7 +146,7 @@ const ProductDetails = () => {
               {activeFilter === "Description" ? (
                   <div style={{ color: 'rgb(71, 71, 71)', margin: '10px' }}>{product.description}</div>
             ) : (
-              <Reviews id={product.id} reviews={product.reviews} onAddReview={onAddReview} />
+              <Reviews id={product._id} reviews={product.reviews} onAddReview={onAddReview} />
             )}
             </div>
             

@@ -6,8 +6,8 @@
   padding:50px;
 }
 
-.images {
-  width: 50%;
+.images img {
+  width: 100% !important;
 }
 
 .product_details {
@@ -17,11 +17,12 @@
 
 .price {
   display: flex;
-  font-size: 30px;
+  font-size: 30px !important;
 }
 
 .oldPrice {
   color: #8c7b7b;
+  font-size: 30px !important;
 }
 
 .newPrice {

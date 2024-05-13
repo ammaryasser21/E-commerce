@@ -14,7 +14,7 @@ const Cart = () => {
   const handleIncrement = (productId) => {
     setCart(prevCart => {
       return prevCart.map(product => {
-        if (product.id === productId) {
+        if (product._id === productId) {
           return { ...product, number: product.number + 1 };
         }
         return product;
@@ -25,7 +25,7 @@ const Cart = () => {
   const handleDecrement = (productId) => {
     setCart(prevCart => {
       return prevCart.map(product => {
-        if (product.id === productId && product.number > 0) {
+        if (product._id === productId && product.number > 0) {
           return { ...product, number: product.number - 1 };
         }
         return product;
@@ -36,7 +36,7 @@ const Cart = () => {
   const handleQuantityChange = (productId, newQuantity) => {
     setCart(prevCart => {
       return prevCart.map(product => {
-        if (product.id === productId) {
+        if (product._id === productId) {
           return { ...product, number: parseInt(newQuantity, 10) || 0 };
         }
         return product;
@@ -80,28 +80,28 @@ const Cart = () => {
               </thead>
               <tbody>
                 {cart.map((product) => (
-                  <tr key={product.id}>
+                  <tr key={product._id}>
                     <td>
-                      <Link className="img-link" to={{ pathname: "/ProductDetails", search: `?id=${product.id}` }}>
+                      <Link className="img-link" to={{ pathname: "/ProductDetails", search: `?id=${product._id}` }}>
                         <img src={product.photo} alt={product.name} />
                       </Link>
                     </td>
                     <td>
-                      <Link className="name-link" to={{ pathname: "/ProductDetails", search: `?id=${product.id}` }}>
+                      <Link className="name-link" to={{ pathname: "/ProductDetails", search: `?id=${product._id}` }}>
                         {product.name}
                       </Link>
                     </td>
                     <td>${product.price}</td>
                     <td>
-                      <button onClick={() => handleDecrement(product.id)} className="quantity-minus">-</button>
+                      <button onClick={() => handleDecrement(product._id)} className="quantity-minus">-</button>
                       <input 
   type="number" 
   value={product.number} 
   className="quantity-input" 
-  onChange={(e) => handleQuantityChange(product.id, e.target.value)}
+  onChange={(e) => handleQuantityChange(product._id, e.target.value)}
 />
 
-                      <button onClick={() => handleIncrement(product.id)} className="quantity-plus">+</button>
+                      <button onClick={() => handleIncrement(product._id)} className="quantity-plus">+</button>
                     </td>
                     <td>${calculateSubtotal(product).toFixed(2)}</td>
                     <td>

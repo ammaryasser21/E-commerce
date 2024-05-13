@@ -49,14 +49,14 @@ const Wishlist = () => {
               </thead>
               <tbody>
                 {wishlist.map((product) => (
-                  <tr key={product.id}>
+                  <tr key={product._id}>
                     <td>
-                      <Link className="img-link" to={{ pathname: "/ProductDetails", search: `?id=${product.id}` }}>
+                      <Link className="img-link" to={{ pathname: "/ProductDetails", search: `?id=${product._id}` }}>
                         <img src={product.photo} alt={product.name} />
                       </Link>
                     </td>
                     <td>
-                      <Link className="name-link" to={{ pathname: "/ProductDetails", search: `?id=${product.id}` }}>
+                      <Link className="name-link" to={{ pathname: "/ProductDetails", search: `?id=${product._id}` }}>
                         {product.name}
                       </Link>
                     </td>

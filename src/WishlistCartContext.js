@@ -16,11 +16,11 @@ export const WishlistCartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [wishlist, cart]);
   const addToCart = (product) => {
-    const existingProduct = cart.find((item) => item.id === product.id);
+    const existingProduct = cart.find((item) => item._id === product._id);
     if (existingProduct) {
       setCart(
         cart.map((item) =>
-          item.id === product.id ? { ...item, number: item.number + 1 } : item
+          item._id === product._id ? { ...item, number: item.number + 1 } : item
         )
       );
     } else {
@@ -33,12 +33,12 @@ export const WishlistCartProvider = ({ children }) => {
   };
 
   const removeFromCart = (product) => {
-    const updatedCart = cart.filter((item) => item.id !== product.id);
+    const updatedCart = cart.filter((item) => item._id !== product._id);
     setCart(updatedCart);
   };
 
   const removeFromWishlist = (product) => {
-    const updatedWishlist = wishlist.filter((item) => item.id !== product.id);
+    const updatedWishlist = wishlist.filter((item) => item._id !== product._id);
     setWishlist(updatedWishlist);
   };
 

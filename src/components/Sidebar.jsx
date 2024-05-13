@@ -44,7 +44,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('token-admin');
+    localStorage.removeItem('admin-token');
     navigate('/', { replace: true });
   };
 
