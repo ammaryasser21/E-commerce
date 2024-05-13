@@ -57,9 +57,9 @@ const SignUp = ({ onAlreadyHaveAccount, onSignUp }) => {
           body: JSON.stringify(account),
         });
         const responseData = await response.json();
+        console.log(responseData);
         if (response.ok) {
-          const { role, token } = responseData;
-          localStorage.setItem('main-token', token);
+          localStorage.setItem('token', responseData.data.token);
           if (email.includes('admin')) {
             navigate('/Dashboard', { replace: true });
           } else {

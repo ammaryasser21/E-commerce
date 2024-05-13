@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Sidebar from "./Sidebar";
 import Table from "./Table";
 import Mobilenavbar from "./Mobilenavbar";
@@ -8,8 +8,9 @@ const tableType = "Dashproduct";
 const T_head = ["name", "category", "photo", "isNew", "isFeatured", "isTrending", "isOneSale", "price", "discount", "capacity"];
 
 const Dashproduct = () => {
-  const { products: initialProducts } = useProducts();
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState([]);
+
+  
   const [editedProduct, setEditedProduct] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +26,6 @@ const Dashproduct = () => {
     photo: '',
     category: ''
   });
-  const [newProduct, setNewProduct] = useState({});
 
   const editProduct = (editedProductData) => {
     setEditedProduct(editedProductData);
@@ -52,7 +52,7 @@ const Dashproduct = () => {
         isOneSale: formData.isOneSale,
         price: formData.price,
         discount: formData.discount,
-        number: formData.number,
+        number: 0,
         capacity: formData.capacity,
         photo: formData.photo,
         category: formData.category,
@@ -78,6 +78,7 @@ const Dashproduct = () => {
         photo: '',
         category: ''
       });
+      fetchProducts();
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
@@ -123,12 +124,14 @@ const Dashproduct = () => {
       }
     })
     .then(response => {
+      console.log(response);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       if (editedProduct && editedProduct._id === _id) {
         setEditedProduct(null);
       }
+      fetchProducts();
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
@@ -136,54 +139,42 @@ const Dashproduct = () => {
   };
   
 
-  const addProduct = (e) => {
+  const addProduct = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    fetch('http://localhost:5000/api/products/', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        title:formData.name,
-        name: formData.name,
-        description: formData.description,
-        isNew: formData.isNew,
-        isFeatured: formData.isFeatured,
-        isTrending: formData.isTrending,
-        isOneSale: formData.isOneSale,
-        price: formData.price,
-        discount: formData.discount,
-        number: formData.number,
-        capacity: formData.capacity,
-        photo: formData.photo,
-        category: formData.category,
-        reviews: []
-      })
-    })
-    .then(response => {
+    try {
+      const response = await fetch('http://localhost:5000/api/products/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          title: formData.name,
+          name: formData.name,
+          description: formData.description,
+          it_isNew: formData.isNew,
+          isFeatured: formData.isFeatured,
+          isTrending: formData.isTrending,
+          isOneSale: formData.isOneSale,
+          price: formData.price,
+          discount: formData.discount,
+          number: 0,
+          capacity: formData.capacity,
+          photo: formData.photo,
+          category: formData.category,
+          reviews: []
+        })
+      });
+  
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const responseData = response.json();
+  
+      const responseData = await response.json();
       const productsData = responseData.data.Products;
-
-      setNewProduct({
-        name: productsData.name,
-        description: productsData.description,
-        isNew: productsData.isNew,
-        isFeatured: productsData.isFeatured,
-        isTrending: productsData.isTrending,
-        isOneSale: productsData.isOneSale,
-        price: productsData.price,
-        discount: productsData.discount,
-        number: productsData.number,
-        capacity: productsData.capacity,
-        photo: productsData.photo,
-        category: productsData.category
-      });
-
+      console.log(productsData);
+  
       setFormData({
         name: '',
         description: '',
@@ -198,12 +189,52 @@ const Dashproduct = () => {
         photo: '',
         category: ''
       });
-    })
-    .catch(error => {
+      fetchProducts();
+    } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
-    });
+    }
   };
-  
+
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/products/',{
+          method:'GET'
+        });
+        if (!response.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        const responseData = await response.json();
+        const productsData = responseData.data.Products;
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+      
+    };
+    
+    useEffect(() => {
+      const fetchProducts = async () => {
+        try {
+          const response = await fetch('http://localhost:5000/api/products/',{
+            method:'GET'
+          });
+          if (!response.ok) {
+            throw new Error('Failed to fetch products');
+          }
+          const responseData = await response.json();
+          const productsData = responseData.data.Products;
+          setProducts(productsData);
+        } catch (error) {
+          console.error('Error fetching products:', error);
+        }
+        
+      };
+      
+    fetchProducts();
+      
+    }, []);
+    
+ 
   
   
   return (

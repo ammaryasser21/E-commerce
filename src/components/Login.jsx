@@ -25,9 +25,8 @@ const Login = ({ onCreateAccount }) => {
       const responseData = await response.json();
 
       if (response.ok) {
-
-        const {token} = responseData;
-        localStorage.setItem('admin-token', token);
+        console.log(responseData);
+        localStorage.setItem('token', responseData.data.token);
         if(email.includes('admin')){
           navigate('/Dashboard', { replace: true });
         }else{

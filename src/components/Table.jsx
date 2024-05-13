@@ -59,7 +59,7 @@ const Table = ({ tableType, T_head, T_row, onEdit, onDelete }) => {
                       />
                     </button>
                     <button
-                      onClick={() => onDelete(row.id)}
+                      onClick={() => onDelete(row._id)}
                       style={{
                         backgroundColor: "transparent",
                         border: "none"
