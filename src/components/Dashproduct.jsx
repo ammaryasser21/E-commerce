@@ -36,7 +36,7 @@ const Dashproduct = () => {
     e.preventDefault();
     
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/products/${editedProduct._id}`, {
+    fetch(`https://backend-ecommerce-0qim.onrender.com/api/products/${editedProduct._id}`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -116,7 +116,7 @@ const Dashproduct = () => {
 
   const deleteProduct = (_id) => {
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/products/${_id}`, {
+    fetch(`https://backend-ecommerce-0qim.onrender.com/api/products/${_id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -143,7 +143,7 @@ const Dashproduct = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:5000/api/products/', {
+      const response = await fetch('https://backend-ecommerce-0qim.onrender.com/api/products/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -197,7 +197,7 @@ const Dashproduct = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products/',{
+        const response = await fetch('https://backend-ecommerce-0qim.onrender.com/api/products/',{
           method:'GET'
         });
         if (!response.ok) {
@@ -215,7 +215,7 @@ const Dashproduct = () => {
     useEffect(() => {
       const fetchProducts = async () => {
         try {
-          const response = await fetch('http://localhost:5000/api/products/',{
+          const response = await fetch('https://backend-ecommerce-0qim.onrender.com/api/products/',{
             method:'GET'
           });
           if (!response.ok) {
